@@ -5,27 +5,19 @@ using System.Linq;
 
 namespace EnigmaMachine.Rotors
 {
-    public class RotorService
+    public class RotorService : IRotorService
     {
-        private readonly Dictionary<byte,byte> _values;
-        public byte Position { get; set; }
+        public IRotor Rotor { get; set; }
 
-        public RotorService(Dictionary<byte,byte> values, byte position)
+        public byte PassValue(byte index)
         {
-            _values = values;
-            Position = position;
+            return Buffer().First(i => i.Key == (index + Rotor.Position)).Value;
         }
 
-        public byte GetValueByIndex(byte index)
+        public byte ReceiveValue(byte value)
         {
-            var value = Rotor().First(i => i.Key == (index + Position)).Value;          
-            return (byte)value;
-        }
-
-        public byte GetIndexByValue(byte value)
-        {
-            var index = Rotor().First(v => v.Value == value).Key;
-            var buff = index - Position;
+            var index = Buffer().First(v => v.Value == value).Key;
+            var buff = index - Rotor.Position;
             if (buff > 25)
             {
                 buff -= 26;
@@ -34,16 +26,16 @@ namespace EnigmaMachine.Rotors
             {
                 buff += 26;
             }
-            
+
             return (byte)(buff);
         }
 
-        public Dictionary<byte,byte> Rotor()
+        private Dictionary<byte, byte> Buffer()
         {
             var buff = new Dictionary<byte, byte>();
-            foreach (var item in _values)
-            {               
-                var value = item.Value - Position;
+            foreach (var item in Rotor.Values)
+            {
+                var value = item.Value - Rotor.Position;
                 if (value > 25)
                 {
                     value -= 26;
@@ -53,10 +45,10 @@ namespace EnigmaMachine.Rotors
                     value += 26;
                 }
 
-                buff.Add((byte)item.Key, (byte)value);
+                buff.Add(item.Key, (byte)value);
             }
             return buff;
         }
-      
+
     }
 }

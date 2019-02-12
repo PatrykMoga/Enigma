@@ -7,6 +7,7 @@ namespace Helper
     {
         static void Main(string[] args)
         {
+          
             var input = Console.ReadLine();
             var splitted = input.Split(", ");
 
