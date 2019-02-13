@@ -9,13 +9,13 @@ namespace EnigmaMachine.Rotors
         public Dictionary<byte, byte> Values { get; }
         public byte Position { get; set; }
 
-        public Rotor(Dictionary<byte,byte> values)
+        public byte KnockPoint { get;}
+
+        public Rotor(Dictionary<byte, byte> values, byte rotateValue)
         {
+            KnockPoint = rotateValue;
             Values = values;
             Position = 0;
         }
-
-        public void Rotate() => Position++;
-        
     }
 }

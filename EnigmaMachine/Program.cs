@@ -11,27 +11,25 @@ namespace EnigmaMachine
     class Program
     {
         static void Main(string[] args)
-        {
-            //var rotorService = new RotorService <I>();           
-            
-            //var rotor1 = new I(0);
-            //var rotor2 = new II(0);
-            //var rotor3 = new III(0);
+        {           
+            var rotorsRepository = new RotorsRepository();
+            var rotorService = new RotorService();
 
-            
-            //var two = new Connector(rotor2, rotorService);
-            //var one = new Connector(rotor1, rotorService);
-            //var three = new Connector(rotor3, rotorService);
-
-
-
+            var one = rotorsRepository.GetRotor("I");
+            var two = rotorsRepository.GetRotor("II");
+            var three = rotorsRepository.GetRotor("III");
+            one.Position = 10;
+            two.Position = 4;
+            three.Position = 19;
 
             var reflector = new UKW_B();
 
-
-            //var m = new Kupa(one,two,three, reflector);
-            //m.Encode("BARBARA");
-           
-        }     
+            var m = new Enigma(reflector);
+            m.Connector = new Connector(one,two,three,rotorService);
+            var b = Console.ReadLine();
+            var a = m.Encode(b);
+            //rlzdlypcwowfbnzcbguczpljbfnbfusumrwlnqzxyejaddkdqlehmvygemhxfdwkffizglvdsfddyaoyxjzrwptunvuhcwmmjagqrwegtvatbichhcfzstnraryuzxhqqxoqwaqabjohgpmmcvkmzjudkyyijanqiqpwzwyspsvkriyqlcxrepgplmqejvmizscsryaumhogltxnkefocyuvnwqfbxohhbecjqyftnfohqumodcysggsdwtwdbwamokrcuh
+            Console.WriteLine(a);
+        }
     }
 }

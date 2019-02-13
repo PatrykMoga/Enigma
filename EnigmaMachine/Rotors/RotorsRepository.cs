@@ -40,7 +40,7 @@ namespace EnigmaMachine.Rotors
                     {23,17},
                     {24,2},
                     {25,9}
-                    })},
+                    },17)},
                 {"II",new Rotor(new Dictionary<byte, byte>(){{0,0},
                     {1,9},
                     {2,3},
@@ -66,7 +66,7 @@ namespace EnigmaMachine.Rotors
                     {22,5},
                     {23,21},
                     {24,14},
-                    {25,4} }) },
+                    {25,4} },4) },
                 {"III",new Rotor(new Dictionary<byte, byte>(){
                     { 0,1},
                     {1,3},
@@ -93,7 +93,7 @@ namespace EnigmaMachine.Rotors
                     {22,20},
                     {23,18},
                     {24,16},
-                    {25,14} }) }
+                    {25,14} },21) }
             };
         }
 

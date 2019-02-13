@@ -8,7 +8,6 @@ namespace EnigmaMachine.Rotors
     {
         Dictionary<byte, byte> Values { get; }
         byte Position { get; set; }
-
-        void Rotate();
+        byte KnockPoint { get; }
     }
 }

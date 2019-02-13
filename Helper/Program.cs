@@ -11,15 +11,18 @@ namespace Helper
             var input = Console.ReadLine();
             var splitted = input.Split(", ");
 
+            var s = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            Console.WriteLine(s.Length);
+
             //for (int i = 0; i < splitted.Length - 1; i += 2)
             //{
             //    Console.WriteLine("{" + $"\'{splitted[i]}\',{splitted[i + 1]}" + "},");
             //}
 
-            for (int i = 0; i < splitted.Length; i++)
-            {
-                Console.WriteLine("{" + i + "," + splitted[i] + "},");
-            }
+            //for (int i = 0; i < splitted.Length; i++)
+            //{
+            //    Console.WriteLine("{" + i + "," + splitted[i] + "},");
+            //}
 
             //for (int i = 0; i < splitted.Length; i++)
             //{

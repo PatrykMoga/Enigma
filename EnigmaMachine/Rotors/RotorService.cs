@@ -8,25 +8,26 @@ namespace EnigmaMachine.Rotors
     public class RotorService : IRotorService
     {
         public IRotor Rotor { get; set; }
-
+     
         public byte PassValue(byte index)
         {
-            return Buffer().First(i => i.Key == (index + Rotor.Position)).Value;
+            var buff = index + Rotor.Position;
+
+            if (buff > 25) buff -= 26;
+       
+            if (buff < 0) buff += 26;
+            
+            return Buffer().First(i => i.Key == buff).Value;
         }
 
         public byte ReceiveValue(byte value)
         {
             var index = Buffer().First(v => v.Value == value).Key;
             var buff = index - Rotor.Position;
-            if (buff > 25)
-            {
-                buff -= 26;
-            }
-            if (buff < 0)
-            {
-                buff += 26;
-            }
-
+            if (buff > 25) buff -= 26;
+           
+            if (buff < 0) buff += 26;
+           
             return (byte)(buff);
         }
 
@@ -36,19 +37,14 @@ namespace EnigmaMachine.Rotors
             foreach (var item in Rotor.Values)
             {
                 var value = item.Value - Rotor.Position;
-                if (value > 25)
-                {
-                    value -= 26;
-                }
-                if (value < 0)
-                {
-                    value += 26;
-                }
-
+                if (value > 25) value -= 26;
+               
+                if (value < 0) value += 26;
+                
                 buff.Add(item.Key, (byte)value);
             }
             return buff;
         }
-
+       
     }
 }

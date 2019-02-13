@@ -7,10 +7,10 @@ namespace EnigmaMachine.Machine
 {
     public static class TranslationService
     {
-        public static List<byte> ConvertStringToInt(string str)
+        public static List<byte> ConvertCharToEnigmaNumbers(string str)
         {
             var list = new List<byte>();
-            var dic = new Dictionary<char, byte>
+            var dictionary = new Dictionary<char, byte>
             {
                 {'A',0},
                 {'B',1},
@@ -41,18 +41,18 @@ namespace EnigmaMachine.Machine
             };
             foreach (var ch in str.ToUpper())
             {
-                if (dic.Keys.Contains(ch))
+                if (dictionary.Keys.Contains(ch))
                 {
-                    list.Add(dic.First(x => x.Key == ch).Value);
+                    list.Add(dictionary.First(x => x.Key == ch).Value);
                 }
             }
             return list;
         }
 
-        public static char ConvertIntToString(byte number)
+        public static char ConvertEnigmaNumbersToChar(byte number)
         {
 
-            var dic = new Dictionary<char, byte>
+            var dictionary = new Dictionary<char, byte>
             {
                 {'A',0},
                 {'B',1},
@@ -81,7 +81,7 @@ namespace EnigmaMachine.Machine
                 {'Y',24},
                 {'Z',25}
             };
-            return dic.First(x => x.Value == number).Key;
+            return dictionary.First(x => x.Value == number).Key;
         }
     }
 }
