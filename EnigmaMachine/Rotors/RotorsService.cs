@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 using EnigmaMachine.Reflectors;
-using EnigmaMachine.Rotors;
 
-namespace EnigmaMachine.Machine
+namespace EnigmaMachine.Rotors
 {
-    public class Connector
+    public class RotorsService : IRotorsService
     {
-        private readonly IRotorService _rotorService;
+        private readonly IRotatingService _rotorService;
         public IRotor Rotor1 { get; set; }
         public IRotor Rotor2 { get; set; }
         public IRotor Rotor3 { get; set; }
 
-        public Connector(IRotor Rotor1, IRotor Rotor2, IRotor Rotor3, IRotorService rotorService)
+        public RotorsService(IRotor rotor1, IRotor rotor2, IRotor rotor3, IRotatingService rotorService)
         {
             _rotorService = rotorService;
-            this.Rotor1 = Rotor1;
-            this.Rotor2 = Rotor2;
-            this.Rotor3 = Rotor3;
+            Rotor1 = rotor1;
+            Rotor2 = rotor2;
+            Rotor3 = rotor3;
         }
         public byte PassValue(IRotor rotor, byte value)
         {
@@ -34,9 +33,9 @@ namespace EnigmaMachine.Machine
 
         public void Rotate()
         {
-            if (Rotor3.Position == Rotor3.KnockPoint)
+            if (Rotor3.Position == Rotor3.TurnoverPosition)
             {
-                if (Rotor2.Position == Rotor2.KnockPoint)
+                if (Rotor2.Position == Rotor2.TurnoverPosition)
                 {
                     Rotor1.Position++;
                     if (Rotor1.Position > 25) Rotor1.Position -= 26;
@@ -46,7 +45,7 @@ namespace EnigmaMachine.Machine
                 if (Rotor2.Position > 25) Rotor2.Position -= 26;
             }
 
-            else if (Rotor2.Position == Rotor2.KnockPoint)
+            else if (Rotor2.Position == Rotor2.TurnoverPosition)
             {
                 Rotor2.Position++;
                 if (Rotor2.Position > 25) Rotor2.Position -= 26;

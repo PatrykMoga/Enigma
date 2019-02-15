@@ -7,7 +7,8 @@ namespace EnigmaMachine.Rotors
     public interface IRotor
     {
         Dictionary<byte, byte> Values { get; }
+
         byte Position { get; set; }
-        byte KnockPoint { get; }
+        byte TurnoverPosition { get; }
     }
 }

@@ -7,13 +7,13 @@ namespace EnigmaMachine.Rotors
     public class Rotor : IRotor
     {
         public Dictionary<byte, byte> Values { get; }
+
         public byte Position { get; set; }
+        public byte TurnoverPosition { get; }
 
-        public byte KnockPoint { get;}
-
-        public Rotor(Dictionary<byte, byte> values, byte rotateValue)
+        public Rotor(Dictionary<byte, byte> values, byte turnoverPosition)
         {
-            KnockPoint = rotateValue;
+            TurnoverPosition = turnoverPosition;
             Values = values;
             Position = 0;
         }

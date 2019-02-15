@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace EnigmaMachine.Rotors
 {
-    public class RotorService : IRotorService
+    public class RotatingService : IRotatingService
     {
         public IRotor Rotor { get; set; }
      

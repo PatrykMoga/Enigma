@@ -6,6 +6,7 @@ namespace EnigmaMachine.Reflectors
 {
     public interface IReflector
     {
+        Dictionary<byte, byte> Values { get; }
         byte ReflectValue(byte n);
     }
 }

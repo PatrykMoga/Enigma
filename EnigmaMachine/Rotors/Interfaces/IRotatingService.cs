@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EnigmaMachine.Rotors
 {
-    public interface IRotorService
+    public interface IRotatingService
     {
         IRotor Rotor { get; set; }
         byte PassValue(byte index);

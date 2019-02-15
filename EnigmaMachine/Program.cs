@@ -12,20 +12,30 @@ namespace EnigmaMachine
     {
         static void Main(string[] args)
         {           
-            var rotorsRepository = new RotorsRepository();
-            var rotorService = new RotorService();
+            var repository = new MemoryRepository();
+            var rotorService = new RotatingService();
+            
 
-            var one = rotorsRepository.GetRotor("I");
-            var two = rotorsRepository.GetRotor("II");
-            var three = rotorsRepository.GetRotor("III");
-            one.Position = 10;
-            two.Position = 4;
-            three.Position = 19;
+            var one = repository.GetRotor("I");
+            var two = repository.GetRotor("II");
+            var three = repository.GetRotor("III");
+            one.Position = 0;
+            two.Position = 0;
+            three.Position = 0;
 
-            var reflector = new UKW_B();
+            var rotors = new RotorsService(one,two,three,rotorService);
+            var reflector = repository.GetReflector("UKW C");
 
-            var m = new Enigma(reflector);
-            m.Connector = new Connector(one,two,three,rotorService);
+            var m = new Enigma();
+            var decoder = new EnigmaDecoder();
+            decoder.Reflector = reflector;
+            decoder.RotorsService = rotors;
+
+            m.Decoder = decoder;
+
+
+
+
             var b = Console.ReadLine();
             var a = m.Encode(b);
             //rlzdlypcwowfbnzcbguczpljbfnbfusumrwlnqzxyejaddkdqlehmvygemhxfdwkffizglvdsfddyaoyxjzrwptunvuhcwmmjagqrwegtvatbichhcfzstnraryuzxhqqxoqwaqabjohgpmmcvkmzjudkyyijanqiqpwzwyspsvkriyqlcxrepgplmqejvmizscsryaumhogltxnkefocyuvnwqfbxohhbecjqyftnfohqumodcysggsdwtwdbwamokrcuh
