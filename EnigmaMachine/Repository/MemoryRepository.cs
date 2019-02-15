@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using EnigmaMachine.Reflectors;
+using EnigmaMachine.Rotors;
 
-namespace EnigmaMachine.Rotors
+namespace EnigmaMachine.Repository
 {
     public class MemoryRepository
     {
@@ -44,6 +45,7 @@ namespace EnigmaMachine.Rotors
                     {16,19},
                     {18,20},}) }
             };
+
             _rotors = new Dictionary<string, Rotor>()
             {
                 {"I",new Rotor(new Dictionary<byte, byte>(){
@@ -141,5 +143,9 @@ namespace EnigmaMachine.Rotors
             _reflectors.TryGetValue(name, out Reflector reflector);
             return reflector;
         }
+
+        public string AllRotorsNames => string.Join(' ', _rotors.Keys);
+
+        public string AllRefletorsNames => string.Join(' ', _reflectors.Keys);
     }
 }

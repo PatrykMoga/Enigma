@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace EnigmaMachine.Reflectors
 {
-    public class Reflector : IReflector
+    public class Reflector
     {
         public Dictionary<byte, byte> Values { get; }
 

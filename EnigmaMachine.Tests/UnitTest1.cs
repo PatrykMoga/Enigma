@@ -12,17 +12,7 @@ namespace EnigmaMachine.Tests
         [Fact]
         public void Test1()
         {
-            var rotorsRepository = new MemoryRepository();
-            var rotorService = new RotatingService();
-
-            var one = rotorsRepository.GetRotor("I");
-            var two = rotorsRepository.GetRotor("II");
-            var three = rotorsRepository.GetRotor("III");
-
-            //var reflector = new Reflector();
-
-            //var m = new Machine.Enigma(reflector);
-            //m.Connector = new RotorsService(one, two, three, rotorService);
+           
 
             //var value = m.Encode("BDZGOWCXLTKSBTMCDLPBMUQOFXYHCXTGYJFLINHNXSHIUNTHEORXPQPKO");
             //var expected = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -33,17 +23,7 @@ namespace EnigmaMachine.Tests
         [Fact]
         public void Test2()
         {
-            var rotorsRepository = new MemoryRepository();
-            var rotorService = new RotatingService();
-
-            var one = rotorsRepository.GetRotor("I");
-            var two = rotorsRepository.GetRotor("II");
-            var three = rotorsRepository.GetRotor("III");
-
-            //var reflector = new Reflector();
-
-            //var m = new Machine.Enigma(reflector);
-            //m.Connector = new RotorsService(one, two, three, rotorService);
+           
 
             //var value = m.Encode("BDZGOWCXLTKSBTMCDLPBMUQOFXYHCXTGYJFLINHNXSHIUNTHEORXPQPKOVHCBUBTZSZSOOSTGOTFSODBBZZLXLCYZXIFGWFDZEEQIBMGFJBWZFCKPFMGBXQCIVIBBRNCOCJUVYDKMVJPFMDRMTGLWFOZLXGJEYYQ");
             //var expected = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -54,18 +34,7 @@ namespace EnigmaMachine.Tests
         [Fact]
         public void Test3()
         {
-            var rotorsRepository = new MemoryRepository();
-            var rotorService = new RotatingService();
-
-            var one = rotorsRepository.GetRotor("I");
-            var two = rotorsRepository.GetRotor("II");
-            var three = rotorsRepository.GetRotor("III");
-
-           // var reflector = new Reflector();
-
-            //var m = new Machine.Enigma(reflector);
-            //m.Connector = new RotorsService(one, two, three, rotorService);
-
+           
             //var value = m.Encode("BDZGOWCXLTKSBTMCDLPBMUQOFXYHCXTGYJFLINHNXSHIUNTHEORXPQPKOVHCBUBTZSZSOOSTGOTFSODBBZZLXLCYZXIFGWFDZEEQ");
             //var expected = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
@@ -75,17 +44,7 @@ namespace EnigmaMachine.Tests
         [Fact]
         public void Test4()
         {
-            var rotorsRepository = new MemoryRepository();
-            var rotorService = new RotatingService();
-
-            var one = rotorsRepository.GetRotor("I");
-            var two = rotorsRepository.GetRotor("II");
-            var three = rotorsRepository.GetRotor("III");
-
-            //var reflector = new Reflector();
-
-            //var m = new Machine.Enigma(reflector);
-            //m.Connector = new RotorsService(one, two, three, rotorService);
+            
 
             //var value = m.Encode("BDZGOWCXLTKSBTMCDLPBMUQOFXYHCXTGYJFLINHNXSHIUNTHEORXPQPKOVHCBUBTZSZSOOSTGOTFSODBBZZLXLCYZXIFGWFDZEEQI");
             //var expected = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";

@@ -30,9 +30,7 @@ namespace Helper
             //}
 
 
-            //private static string GetMorseValue(char value) => _morseCode.FirstOrDefault(x => x.Key == value).Value;
-
-            //private static char GetAlphabeticValue(string value) => _morseCode.FirstOrDefault(x => x.Value == value).Key;
+           
         }
 
         public void pfff()

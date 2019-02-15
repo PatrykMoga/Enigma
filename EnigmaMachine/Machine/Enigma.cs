@@ -11,6 +11,6 @@ namespace EnigmaMachine.Machine
     {
         public EnigmaDecoder Decoder { get; set; }
 
-        public string Encode(string message) => Decoder.Decode(message);
+        public string Decode(string message) => Decoder.Decode(message);
     }
 }
