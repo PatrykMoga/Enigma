@@ -6,9 +6,10 @@ namespace EnigmaMachine.Rotors
 {
     public interface IRotor
     {
+        RotorService RotorService { get; }
         Dictionary<byte, byte> Values { get; }
 
         byte Position { get; set; }
-        byte TurnoverPosition { get; }
+        byte TurnoverPosition { get; }     
     }
 }

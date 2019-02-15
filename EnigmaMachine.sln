@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnigmaMachine", "EnigmaMach
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helper", "Helper\Helper.csproj", "{8023A763-4E43-4B5C-810A-3FF3D3672847}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnigmaMachine.Tests", "EnigmaMachine.Tests\EnigmaMachine.Tests.csproj", "{A8B162AA-5BBD-47DE-AC3E-71139018CF7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnigmaMachine.Tests", "EnigmaMachine.Tests\EnigmaMachine.Tests.csproj", "{A8B162AA-5BBD-47DE-AC3E-71139018CF7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

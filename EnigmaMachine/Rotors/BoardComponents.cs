@@ -5,35 +5,23 @@ using EnigmaMachine.Reflectors;
 
 namespace EnigmaMachine.Rotors
 {
-    public class EnigmaService
-    {
-        private readonly RotatingService _rotatingService;
-
+    public class BoardComponents
+    {       
         public Reflector Reflector { get; set; }
 
         public IRotor Rotor1 { get; set; }
         public IRotor Rotor2 { get; set; }
         public IRotor Rotor3 { get; set; }
+      
+        public BoardComponents(IRotor rotor1, IRotor rotor2, IRotor rotor3, Reflector reflector)
+        {            
+            Reflector = reflector;
 
-        public EnigmaService(IRotor rotor1, IRotor rotor2, IRotor rotor3)
-        {
-            _rotatingService = new RotatingService();
             Rotor1 = rotor1;
             Rotor2 = rotor2;
             Rotor3 = rotor3;
         }
-        public byte PassValue(IRotor rotor, byte value)
-        {
-            _rotatingService.Rotor = rotor;
-            return _rotatingService.PassValue(value);
-        }
-
-        public byte ReceiveValue(IRotor rotor, byte value)
-        {
-            _rotatingService.Rotor = rotor;
-            return _rotatingService.ReceiveValue(value);
-        }
-
+             
         public void Rotate()
         {
             if (Rotor3.Position == Rotor3.TurnoverPosition)

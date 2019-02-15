@@ -5,10 +5,12 @@ using System.Linq;
 
 namespace EnigmaMachine.Rotors
 {
-    public class RotatingService : IRotatingService
+    public class RotorService
     {
         public IRotor Rotor { get; set; }
-     
+
+        public RotorService(IRotor rotor) => Rotor = rotor;
+
         public byte PassValue(byte index)
         {
             var buff = index + Rotor.Position;
@@ -44,7 +46,6 @@ namespace EnigmaMachine.Rotors
                 buff.Add(item.Key, (byte)value);
             }
             return buff;
-        }
-       
+        }     
     }
 }
