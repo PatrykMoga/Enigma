@@ -9,15 +9,15 @@ namespace EnigmaMachine.Setup
 {
     public class SetupService : IMenuComponent
     {
-        private readonly MemoryRepository _repository;
-        public BoardComponents EnigmaService { get; }
+        private readonly DataProvider _provider;
+        public ScramblerBoard EnigmaService { get; }
         public MenuItem[] MenuItems { get; }
 
         public SetupService()
         {
-            _repository = new MemoryRepository();
+            _provider = new DataProvider();
             EnigmaService =
-                new BoardComponents(_repository.GetRotor("I"), _repository.GetRotor("II"), _repository.GetRotor("III"), _repository.GetReflector("UKW B"));
+                new ScramblerBoard(_provider.GetRotor("I"), _provider.GetRotor("II"), _provider.GetRotor("III"), _provider.GetReflector("UKW B"));
 
             MenuItems = new[]
             {
@@ -29,7 +29,7 @@ namespace EnigmaMachine.Setup
 
         public void SetUpRotors()
         {
-            Console.WriteLine("Availble rotors: " + _repository.AllRotorsNames);
+            Console.WriteLine("Availble rotors: " + _provider.AllRotorsNames);
             Console.Write("Select rotors: ");
         }
     }

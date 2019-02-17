@@ -7,14 +7,14 @@ using EnigmaMachine.Rotors;
 
 namespace EnigmaMachine.Repository
 {
-    public class MemoryRepository
+    public class MemoryRepository : IRepository
     {
-        private readonly Dictionary<string, Rotor> _rotors;
-        private readonly Dictionary<string, Reflector> _reflectors;
+        public Dictionary<string, Rotor> Rotors { get; }
+        public Dictionary<string, Reflector> Reflectors { get; }
 
         public MemoryRepository()
         {
-            _reflectors = new Dictionary<string, Reflector>()
+            Reflectors = new Dictionary<string, Reflector>()
             {
                 {"UKW B", new Reflector(new Dictionary<byte,byte>(){
                     {0,24},
@@ -46,7 +46,7 @@ namespace EnigmaMachine.Repository
                     {18,20},}) }
             };
 
-            _rotors = new Dictionary<string, Rotor>()
+            Rotors = new Dictionary<string, Rotor>()
             {
                 {"I",new Rotor(new Dictionary<byte, byte>(){
                     {0,4},
@@ -130,22 +130,6 @@ namespace EnigmaMachine.Repository
                     {24,16},
                     {25,14} },21) }
             };
-        }
-
-        public Rotor GetRotor(string name)
-        {
-            _rotors.TryGetValue(name, out Rotor rotor);
-            return rotor;
-        }
-
-        public Reflector GetReflector(string name)
-        {
-            _reflectors.TryGetValue(name, out Reflector reflector);
-            return reflector;
-        }
-
-        public string AllRotorsNames => string.Join(' ', _rotors.Keys);
-
-        public string AllRefletorsNames => string.Join(' ', _reflectors.Keys);
+        }      
     }
 }

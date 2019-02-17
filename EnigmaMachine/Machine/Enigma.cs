@@ -32,11 +32,12 @@ namespace EnigmaMachine.Machine
             {
                 Console.WriteLine($"{item.Key} {item.Name}");
             }
-            Console.WriteLine(Decoder.Decode("BASIA KUDZIA"));
+            Console.WriteLine(Decoder.Decode("BARBARA"));
         }
 
         private void PrintWelcomeMsg()
         {
+            // 1 zasada złamana
             Console.WriteLine("Welcome to enigma macine bla bla bal fuck you");
         }
     }
