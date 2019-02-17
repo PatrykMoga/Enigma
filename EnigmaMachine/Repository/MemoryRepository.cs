@@ -48,7 +48,7 @@ namespace EnigmaMachine.Repository
 
             Rotors = new Dictionary<string, Rotor>()
             {
-                {"I",new Rotor(new Dictionary<byte, byte>(){
+                {"I",new Rotor("I",new Dictionary<byte, byte>(){
                     {0,4},
                     {1,10},
                     {2,12},
@@ -76,7 +76,7 @@ namespace EnigmaMachine.Repository
                     {24,2},
                     {25,9}
                     },17)},
-                {"II",new Rotor(new Dictionary<byte, byte>(){{0,0},
+                {"II",new Rotor("II",new Dictionary<byte, byte>(){{0,0},
                     {1,9},
                     {2,3},
                     {3,10},
@@ -102,7 +102,7 @@ namespace EnigmaMachine.Repository
                     {23,21},
                     {24,14},
                     {25,4} },4) },
-                {"III",new Rotor(new Dictionary<byte, byte>(){
+                {"III",new Rotor("III",new Dictionary<byte, byte>(){
                     { 0,1},
                     {1,3},
                     {2,5},

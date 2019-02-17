@@ -20,10 +20,11 @@ namespace EnigmaMachine.Machine
         {
             MenuItems = new[]
             {
-                new MenuItem(1,"Welcome",PrintWelcomeMsg)
+                new MenuItem(1,"Decode message",PrintWelcomeMsg),
+                new MenuItem(2,"Setup machine",PrintWelcomeMsg),             
             };
-            this.SetupService = new SetupService();
-            this.Decoder = new DecodingService(SetupService.EnigmaService);
+            SetupService = new SetupService();
+            Decoder = new DecodingService(SetupService.ScramblerBoard);
         }
 
         public void Initialize()
@@ -31,8 +32,7 @@ namespace EnigmaMachine.Machine
             foreach (var item in MenuItems)
             {
                 Console.WriteLine($"{item.Key} {item.Name}");
-            }
-            Console.WriteLine(Decoder.Decode("BARBARA"));
+           }           
         }
 
         private void PrintWelcomeMsg()

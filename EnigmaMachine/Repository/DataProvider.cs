@@ -10,13 +10,17 @@ namespace EnigmaMachine.Repository
     {
         public IRepository Repository { get; }
 
-        public DataProvider()
+        public DataProvider(IRepository repository)
         {
-            Repository = new MemoryRepository();
+            Repository = repository;
         }
+
         public Rotor GetRotor(string name)
         {
             Repository.Rotors.TryGetValue(name, out Rotor rotor);
+
+            var list = new List<Rotor>();
+            list.Find(r => r.Name == name);
             return rotor;
         }
 

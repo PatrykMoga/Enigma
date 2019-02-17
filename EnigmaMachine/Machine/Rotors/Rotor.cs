@@ -6,15 +6,18 @@ namespace EnigmaMachine.Rotors
 {
     public class Rotor : IRotor
     {
-        public RotorDataRelay DataRelay { get; }
+        public DataRelay DataRelay { get; }
+
+        public string Name { get; }
         public Dictionary<byte, byte> Values { get; }
 
         public byte Position { get; set; }
         public byte TurnoverPosition { get; }
 
-        public Rotor(Dictionary<byte, byte> values, byte turnoverPosition)
+        public Rotor(string name, Dictionary<byte, byte> values, byte turnoverPosition)
         {
-            DataRelay = new RotorDataRelay(this);
+            Name = name;
+            DataRelay = new DataRelay(this);
             TurnoverPosition = turnoverPosition;
             Values = values;
             Position = 0;

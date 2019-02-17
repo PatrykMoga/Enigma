@@ -8,7 +8,10 @@ namespace EnigmaMachine.Rotors
     {
         private readonly ScramblerBoard _board;
 
-        public Rotator(ScramblerBoard board) => _board = board;
+        public Rotator(ScramblerBoard board)
+        {
+            _board = board;
+        }
 
         public void Rotate()
         {

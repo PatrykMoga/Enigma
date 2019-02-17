@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace EnigmaMachine.Rotors
 {
-    public class RotorDataRelay
+    public class DataRelay : IDataRelay
     {
         public IRotor Rotor { get; set; }
 
-        public RotorDataRelay(IRotor rotor) => Rotor = rotor;
+        public DataRelay(IRotor rotor) => Rotor = rotor;
 
         public byte PassValue(byte index)
         {
