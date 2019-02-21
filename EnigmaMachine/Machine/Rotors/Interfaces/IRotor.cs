@@ -6,6 +6,7 @@ namespace EnigmaMachine.Rotors
 {
     public interface IRotor
     {
+        string Name { get; }
         DataRelay DataRelay { get; }
         Dictionary<byte, byte> Values { get; }
 

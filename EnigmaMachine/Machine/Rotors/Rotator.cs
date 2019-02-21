@@ -39,5 +39,12 @@ namespace EnigmaMachine.Rotors
             _board.Rotor3.Position++;
             if (_board.Rotor3.Position > 25) _board.Rotor3.Position -= 26;
         }
+
+        public void ResetPositions()
+        {
+            _board.Rotor1.Position = 0;
+            _board.Rotor2.Position = 0;
+            _board.Rotor3.Position = 0;
+        }
     }
 }

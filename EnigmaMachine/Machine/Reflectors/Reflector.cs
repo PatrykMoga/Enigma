@@ -7,6 +7,7 @@ namespace EnigmaMachine.Reflectors
 {
     public class Reflector : IReflector
     {
+        public string Name { get; }
         public Dictionary<byte, byte> Values { get; }
 
         public Reflector(Dictionary<byte, byte> values)
@@ -22,8 +23,6 @@ namespace EnigmaMachine.Reflectors
             }
 
             return Values.First(x => x.Value == n).Key;
-
-            //TODO refactor
         }
     }
 }

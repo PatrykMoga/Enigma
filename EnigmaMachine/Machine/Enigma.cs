@@ -9,36 +9,31 @@ using EnigmaMachine.MenuComponents;
 
 namespace EnigmaMachine.Machine
 {
-    public class Enigma : IMenuComponent
+    public class Enigma //: IMenuComponent
     {
         public DecodingService Decoder { get; set; }
         public SetupService SetupService { get; }
 
-        public MenuItem[] MenuItems { get; }
+        public MenuService Menu { get; }
 
         public Enigma()
         {
-            MenuItems = new[]
-            {
-                new MenuItem(1,"Decode message",PrintWelcomeMsg),
-                new MenuItem(2,"Setup machine",PrintWelcomeMsg),             
-            };
             SetupService = new SetupService();
             Decoder = new DecodingService(SetupService.ScramblerBoard);
-        }
 
+            Menu = new MenuService();
+            Menu.AddComponent(Decoder);
+            Menu.AddComponent(SetupService);
+           
+        }
+      
         public void Initialize()
         {
-            foreach (var item in MenuItems)
-            {
-                Console.WriteLine($"{item.Key} {item.Name}");
-           }           
-        }
-
-        private void PrintWelcomeMsg()
-        {
-            // 1 zasada złamana
-            Console.WriteLine("Welcome to enigma macine bla bla bal fuck you");
-        }
+            Console.WriteLine("=====================");
+            Console.WriteLine($"{Decoder.Board.Rotor1.Name}: {Decoder.Board.Rotor1.Position}, {Decoder.Board.Rotor2.Name}: {Decoder.Board.Rotor2.Position}, {Decoder.Board.Rotor3.Name}: {Decoder.Board.Rotor3.Position}");
+            Console.WriteLine("=====================");
+            Console.WriteLine();
+            Menu.PrintMenu();
+        }        
     }
 }

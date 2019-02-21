@@ -6,6 +6,6 @@ namespace EnigmaMachine.MenuComponents
 {
     public interface IMenuComponent
     {
-        MenuItem[] MenuItems { get; } 
+        MenuItem[] MenuItems { get; }
     }
 }

@@ -3,18 +3,35 @@ using System.Collections.Generic;
 using System.Text;
 using EnigmaMachine.Reflectors;
 using EnigmaMachine.Rotors;
+using EnigmaMachine.MenuComponents;
 
 namespace EnigmaMachine.Machine
 {
-    public class DecodingService
+    public class DecodingService : IMenuComponent
     {
 
         public ScramblerBoard Board { get; set; }
+        public MenuItem[] MenuItems { get; }
+
+        //TranslationService ITranslator
+        //Plugboard
 
         public DecodingService(ScramblerBoard scramblerBoard)
         {
-           Board = scramblerBoard;
+            Board = scramblerBoard;
+
+            MenuItems = new[]
+            {
+                new MenuItem("Decode message",StartDecoding),
+            };
         }
+
+        public void StartDecoding()
+        {
+            var message = Console.ReadLine();
+            Console.WriteLine(Decode(message));
+        }
+
         public string Decode(string message)
         {
             var strBuilder = new StringBuilder();
