@@ -16,7 +16,7 @@ namespace EnigmaMachine.Repository
         {
             Reflectors = new Dictionary<string, Reflector>()
             {
-                {"UKW B", new Reflector(new Dictionary<byte,byte>(){
+                {"UKW B", new Reflector("UKW B",new Dictionary<byte,byte>(){
                     {0,24},
                     {1,17},
                     {2,20},
@@ -30,7 +30,7 @@ namespace EnigmaMachine.Repository
                     {12,14},
                     {19,25},
                     {21,22},}) },
-                {"UKW C", new Reflector(new Dictionary<byte,byte>(){
+                {"UKW C", new Reflector("UKW C",new Dictionary<byte,byte>(){
                     {0,5},
                     {1,21},
                     {2,15},

@@ -10,8 +10,9 @@ namespace EnigmaMachine.Reflectors
         public string Name { get; }
         public Dictionary<byte, byte> Values { get; }
 
-        public Reflector(Dictionary<byte, byte> values)
+        public Reflector(string name, Dictionary<byte, byte> values)
         {
+            Name = name;
             Values = values;
         }
 

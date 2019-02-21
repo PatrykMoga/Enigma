@@ -23,11 +23,12 @@ namespace EnigmaMachine.MenuComponents
             {
                 Console.WriteLine($"{item.Key}: {item.Value.Name}");
             }
-
+            Console.WriteLine();
             while (true)
             {
                 var input = Console.ReadLine();
                 ExecuteComponent(input);
+                break;
             }
         }
 
@@ -46,15 +47,14 @@ namespace EnigmaMachine.MenuComponents
                 if (MenuItems.ContainsKey(key))
                 {
                     MenuItems[key].Action();
-                }          
-            }
-
-            else
-            {
-                Console.WriteLine("Wrong command!");
-                Console.ReadKey();
-                Console.Clear();
-            }               
+                }
+                else
+                {
+                    Console.WriteLine("Wrong command!");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }           
         }
     }
 }

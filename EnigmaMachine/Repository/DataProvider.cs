@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using EnigmaMachine.Reflectors;
 using EnigmaMachine.Rotors;
 
@@ -30,8 +31,10 @@ namespace EnigmaMachine.Repository
             return reflector;
         }
 
-        public string AllRotorsNames => string.Join(' ', Repository.Rotors.Keys);
+        public string AllRotorsNames => string.Join(", ", Repository.Rotors.Keys);
 
-        public string AllRefletorsNames => string.Join(' ', Repository.Reflectors.Keys);
+        public List<string> RotorsNames => Repository.Rotors.Keys.ToList();
+
+        public string AllRefletorsNames => string.Join(", ", Repository.Reflectors.Keys);
     }
 }

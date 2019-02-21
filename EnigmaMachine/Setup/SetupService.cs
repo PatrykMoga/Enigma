@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using EnigmaMachine.Repository;
 using EnigmaMachine.Rotors;
 using EnigmaMachine.MenuComponents;
@@ -11,6 +10,7 @@ namespace EnigmaMachine.Setup
     public class SetupService : IMenuComponent
     {
         private readonly DataProvider _provider;
+
         public ScramblerBoard ScramblerBoard { get; }
 
         public MenuItem[] MenuItems { get; }
@@ -28,40 +28,37 @@ namespace EnigmaMachine.Setup
             MenuItems = new[]
             {
                 new MenuItem("Setup rotors",SetUpRotors),
-                new MenuItem("Setup positions",SetUpPositions)               
+                new MenuItem("Setup positions",SetUpPositions),              
+                new MenuItem("Setup reflector",SetUpReflector)               
             };
         }
-       
+
         public void SetUpRotors()
         {
-            Console.WriteLine(_provider.AllRotorsNames);
-            var input = Console.ReadLine();
-            ScramblerBoard.Rotor1 = _provider.GetRotor(input);
-            input = Console.ReadLine();
-            ScramblerBoard.Rotor2 = _provider.GetRotor(input);
-            input = Console.ReadLine();
-            ScramblerBoard.Rotor3 = _provider.GetRotor(input);
+            var names = _provider.RotorsNames;
+            ScramblerBoard.Rotor1 = SetRotor(names,1);          
+            ScramblerBoard.Rotor2 = SetRotor(names,2);
+            ScramblerBoard.Rotor3 = SetRotor(names,3);
             ScramblerBoard.Rotator.ResetPositions();
+            Clear();
         }
 
         public void SetUpPositions()
         {
             Console.Write($"Set position of Rotor1: ");
-            var input = Console.ReadLine();
-            ScramblerBoard.Rotor1.Position = ConvertToRotorPosition(input);
+            ScramblerBoard.Rotor1.Position = SetRotorPosition();
             Console.Write($"Set position of Rotor2: ");
-            input = Console.ReadLine();
-            ScramblerBoard.Rotor2.Position = ConvertToRotorPosition(input);
+            ScramblerBoard.Rotor2.Position = SetRotorPosition();
             Console.Write($"Set position of Rotor3: ");
-            input = Console.ReadLine();
-            ScramblerBoard.Rotor3.Position = ConvertToRotorPosition(input);
-
+            ScramblerBoard.Rotor3.Position = SetRotorPosition();
+            Clear();
         }
 
-        private byte ConvertToRotorPosition(string input)
+        private byte SetRotorPosition()
         {
             while (true)
             {
+                var input = Console.ReadLine();
                 if (byte.TryParse(input, out byte possition) && possition < 26)
                 {
                     return possition;
@@ -71,6 +68,34 @@ namespace EnigmaMachine.Setup
                     Console.WriteLine("Wrong try again!");
                 }
             }
+        }
+
+        private Rotor SetRotor(List<string> names, int number)
+        {
+            Clear();                   
+            Console.WriteLine("===================================================");
+            Console.WriteLine($"Availble rotors: {string.Join(", ",names)}");
+            Console.WriteLine("===================================================");
+            Console.WriteLine();
+            Console.Write($"Set Rotor{number}: ");
+            while (true)
+            {               
+                var input = ReadLine();
+                if (names.Contains(input))
+                {
+                    names.Remove(input);
+                    return _provider.GetRotor(input);
+                }
+                else
+                {
+                    Console.WriteLine("Rotor doesn't exist");
+                }              
+            }  
+        }
+
+        private void SetUpReflector()
+        {
+            Clear();
         }
     }
 }

@@ -29,11 +29,21 @@ namespace EnigmaMachine.Machine
       
         public void Initialize()
         {
-            Console.WriteLine("=====================");
-            Console.WriteLine($"{Decoder.Board.Rotor1.Name}: {Decoder.Board.Rotor1.Position}, {Decoder.Board.Rotor2.Name}: {Decoder.Board.Rotor2.Position}, {Decoder.Board.Rotor3.Name}: {Decoder.Board.Rotor3.Position}");
-            Console.WriteLine("=====================");
-            Console.WriteLine();
-            Menu.PrintMenu();
+            while (true)
+            {
+                Console.Clear();
+                var reflector = $"{Decoder.Board.Reflector.Name}";
+                var rotor1 = $"{Decoder.Board.Rotor1.Name}: {Decoder.Board.Rotor1.Position}";
+                var rotor2 = $"{Decoder.Board.Rotor2.Name}: {Decoder.Board.Rotor2.Position}";
+                var rotor3 = $"{Decoder.Board.Rotor3.Name}: {Decoder.Board.Rotor3.Position}";
+
+                Console.WriteLine("===================================================");
+                Console.WriteLine($"{reflector} | {rotor1} | {rotor2} | {rotor3} ");
+                Console.WriteLine("===================================================");
+                Console.WriteLine();
+                Menu.PrintMenu();
+               
+            }              
         }        
     }
 }

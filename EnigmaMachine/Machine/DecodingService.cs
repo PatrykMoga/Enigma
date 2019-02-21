@@ -28,8 +28,13 @@ namespace EnigmaMachine.Machine
 
         public void StartDecoding()
         {
+            Console.Write("Type message: ");
             var message = Console.ReadLine();
+            Console.WriteLine("===================================================================================================");
             Console.WriteLine(Decode(message));
+            Console.WriteLine("===================================================================================================");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public string Decode(string message)
