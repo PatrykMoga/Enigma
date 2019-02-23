@@ -6,7 +6,7 @@ namespace EnigmaMachine.Rotors
 {
     public class Rotor : IRotor
     {
-        public DataRelay DataRelay { get; }
+        public IDataRelay DataRelay { get; }
 
         public string Name { get; }
         public Dictionary<byte, byte> Values { get; }

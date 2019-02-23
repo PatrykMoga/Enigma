@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace EnigmaMachine.Reflectors
 {
-    public class Reflector : IReflector
+    public class DictionaryReflector : IReflector
     {
         public string Name { get; }
         public Dictionary<byte, byte> Values { get; }
 
-        public Reflector(string name, Dictionary<byte, byte> values)
+        public DictionaryReflector(string name, Dictionary<byte, byte> values)
         {
             Name = name;
             Values = values;

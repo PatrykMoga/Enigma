@@ -10,13 +10,13 @@ namespace EnigmaMachine.Repository
     public class MemoryRepository : IRepository
     {
         public Dictionary<string, Rotor> Rotors { get; }
-        public Dictionary<string, Reflector> Reflectors { get; }
+        public Dictionary<string, DictionaryReflector> Reflectors { get; }
 
         public MemoryRepository()
         {
-            Reflectors = new Dictionary<string, Reflector>()
+            Reflectors = new Dictionary<string, DictionaryReflector>()
             {
-                {"UKW B", new Reflector("UKW B",new Dictionary<byte,byte>(){
+                {"UKW B", new DictionaryReflector("UKW B",new Dictionary<byte,byte>(){
                     {0,24},
                     {1,17},
                     {2,20},
@@ -30,7 +30,7 @@ namespace EnigmaMachine.Repository
                     {12,14},
                     {19,25},
                     {21,22},}) },
-                {"UKW C", new Reflector("UKW C",new Dictionary<byte,byte>(){
+                {"UKW C", new DictionaryReflector("UKW C",new Dictionary<byte,byte>(){
                     {0,5},
                     {1,21},
                     {2,15},

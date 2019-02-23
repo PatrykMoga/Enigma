@@ -20,10 +20,10 @@ namespace EnigmaMachine.MenuComponents
         {
             
             foreach (var item in MenuItems)
-            {
-                Console.WriteLine($"{item.Key}: {item.Value.Name}");
+            {                
+                Console.WriteLine($"{item.Key}: {item.Value.Name}\n");          
             }
-            Console.WriteLine();
+
             while (true)
             {
                 var input = Console.ReadLine();
@@ -50,7 +50,7 @@ namespace EnigmaMachine.MenuComponents
                 }
                 else
                 {
-                    Console.WriteLine("Wrong command!");
+                    Console.WriteLine("Wrong command press enter and try again!");
                     Console.ReadKey();
                     Console.Clear();
                 }

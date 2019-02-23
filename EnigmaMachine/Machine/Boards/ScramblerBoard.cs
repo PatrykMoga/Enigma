@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using EnigmaMachine.Reflectors;
+using EnigmaMachine.Rotors;
+using EnigmaMachine.UIComponents.TopBar;
 
-namespace EnigmaMachine.Rotors
+namespace EnigmaMachine.Machine.Boards
 {
-    public class ScramblerBoard
+    public class ScramblerBoard 
     {
         public Rotator Rotator { get; }
         public IReflector Reflector { get; set; }
@@ -13,7 +15,7 @@ namespace EnigmaMachine.Rotors
         public IRotor Rotor1 { get; set; }
         public IRotor Rotor2 { get; set; }
         public IRotor Rotor3 { get; set; }
-      
+
         public ScramblerBoard(IRotor rotor1, IRotor rotor2, IRotor rotor3, IReflector reflector)
         {
             Rotator = new Rotator(this);

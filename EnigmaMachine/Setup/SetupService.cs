@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using EnigmaMachine.Repository;
 using EnigmaMachine.Rotors;
 using EnigmaMachine.MenuComponents;
+using EnigmaMachine.Machine.Boards;
 using static System.Console;
 
 namespace EnigmaMachine.Setup
@@ -12,11 +13,7 @@ namespace EnigmaMachine.Setup
         private readonly DataProvider _provider;
 
         public ScramblerBoard ScramblerBoard { get; }
-
         public MenuItem[] MenuItems { get; }
-
-        //Plug board
-
 
         public SetupService()
         {
@@ -71,8 +68,7 @@ namespace EnigmaMachine.Setup
         }
 
         private Rotor SetRotor(List<string> names, int number)
-        {
-            Clear();                   
+        {                  
             Console.WriteLine("===================================================");
             Console.WriteLine($"Availble rotors: {string.Join(", ",names)}");
             Console.WriteLine("===================================================");

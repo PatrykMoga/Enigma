@@ -25,9 +25,9 @@ namespace EnigmaMachine.Repository
             return rotor;
         }
 
-        public Reflector GetReflector(string name)
+        public DictionaryReflector GetReflector(string name)
         {
-            Repository.Reflectors.TryGetValue(name, out Reflector reflector);
+            Repository.Reflectors.TryGetValue(name, out DictionaryReflector reflector);
             return reflector;
         }
 
