@@ -37,7 +37,7 @@ namespace EnigmaMachine.Machine
         {
             while (true)
             {              
-                TopBar.PrintBars();
+                TopBar.ShowBars();
                 Menu.PrintMenu();               
             }              
         }        

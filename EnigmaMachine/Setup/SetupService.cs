@@ -13,6 +13,7 @@ namespace EnigmaMachine.Setup
         private readonly DataProvider _provider;
 
         public ScramblerBoard ScramblerBoard { get; }
+        public PlugBoard PlugBoard { get; }
         public MenuItem[] MenuItems { get; }
 
         public SetupService()
@@ -22,31 +23,39 @@ namespace EnigmaMachine.Setup
             ScramblerBoard =
                 new ScramblerBoard(_provider.GetRotor("I"), _provider.GetRotor("II"), _provider.GetRotor("III"), _provider.GetReflector("UKW B"));
 
+            PlugBoard = new PlugBoard();
+
             MenuItems = new[]
             {
                 new MenuItem("Setup rotors",SetUpRotors),
-                new MenuItem("Setup positions",SetUpPositions),              
-                new MenuItem("Setup reflector",SetUpReflector)               
+                new MenuItem("Setup positions",SetUpPositions),
+                new MenuItem("Reset positions",ResetPositions),
+                new MenuItem("Setup reflector",SetUpReflector)
             };
+        }
+
+        private void ResetPositions()
+        {
+            ScramblerBoard.Rotator.ResetPositions();
         }
 
         public void SetUpRotors()
         {
-            var names = _provider.RotorsNames;
-            ScramblerBoard.Rotor1 = SetRotor(names,1);          
-            ScramblerBoard.Rotor2 = SetRotor(names,2);
-            ScramblerBoard.Rotor3 = SetRotor(names,3);
+            var names = _provider.GetRotorsNames();
+            ScramblerBoard.Rotor1 = SetRotor(names, 1);
+            ScramblerBoard.Rotor2 = SetRotor(names, 2);
+            ScramblerBoard.Rotor3 = SetRotor(names, 3);
             ScramblerBoard.Rotator.ResetPositions();
             Clear();
         }
 
         public void SetUpPositions()
         {
-            Console.Write($"Set position of Rotor1: ");
+            Write($"Set position of Rotor1: ");
             ScramblerBoard.Rotor1.Position = SetRotorPosition();
-            Console.Write($"Set position of Rotor2: ");
+            Write($"Set position of Rotor2: ");
             ScramblerBoard.Rotor2.Position = SetRotorPosition();
-            Console.Write($"Set position of Rotor3: ");
+            Write($"Set position of Rotor3: ");
             ScramblerBoard.Rotor3.Position = SetRotorPosition();
             Clear();
         }
@@ -55,27 +64,28 @@ namespace EnigmaMachine.Setup
         {
             while (true)
             {
-                var input = Console.ReadLine();
+                var input = ReadLine();
                 if (byte.TryParse(input, out byte possition) && possition < 26)
                 {
                     return possition;
                 }
                 else
                 {
-                    Console.WriteLine("Wrong try again!");
+                    WriteLine("Wrong try again!");
                 }
             }
         }
 
         private Rotor SetRotor(List<string> names, int number)
-        {                  
-            Console.WriteLine("===================================================");
-            Console.WriteLine($"Availble rotors: {string.Join(", ",names)}");
-            Console.WriteLine("===================================================");
-            Console.WriteLine();
-            Console.Write($"Set Rotor{number}: ");
+        {           
+            var rotors = $"Availble rotors: {string.Join(", ", names)}";
+            Extensions.PrintLines(rotors.Length);
+            WriteLine(rotors);
+            Extensions.PrintLines(rotors.Length);
+            WriteLine();
+            Write($"Set Rotor{number}: ");
             while (true)
-            {               
+            {
                 var input = ReadLine();
                 if (names.Contains(input))
                 {
@@ -84,14 +94,38 @@ namespace EnigmaMachine.Setup
                 }
                 else
                 {
-                    Console.WriteLine("Rotor doesn't exist");
-                }              
-            }  
+                    WriteLine("Rotor doesn't exist");
+                }
+            }
         }
 
         private void SetUpReflector()
         {
-            Clear();
+            var reflectors = _provider.GetReflectorsNames();
+            var reflector = $"Availble reflectors: {string.Join(", ", reflectors)}";
+            Extensions.PrintLines(reflector.Length);
+            WriteLine(reflector);
+            Extensions.PrintLines(reflector.Length);
+            WriteLine();
+            Write($"Set reflector: ");
+            while (true)
+            {
+                var input = ReadLine();
+                if (reflectors.Contains(input))
+                {
+                    ScramblerBoard.Reflector = _provider.GetReflector(input);
+                    break;
+                }
+                else
+                {
+                    WriteLine("Reflector doesn't exist");
+                }
+            }
+        }
+
+        private void SetupPlugs()
+        {
+            PlugBoard.Plugs.Add('a', 't');
         }
     }
 }

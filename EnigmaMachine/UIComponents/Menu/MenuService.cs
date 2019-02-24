@@ -21,8 +21,9 @@ namespace EnigmaMachine.MenuComponents
             
             foreach (var item in MenuItems)
             {                
-                Console.WriteLine($"{item.Key}: {item.Value.Name}\n");          
+                Console.WriteLine($"{item.Key}: {item.Value.Name}");          
             }
+            Console.WriteLine();
 
             while (true)
             {
@@ -30,6 +31,7 @@ namespace EnigmaMachine.MenuComponents
                 ExecuteComponent(input);
                 break;
             }
+            Console.Clear();
         }
 
         public void AddComponent(IMenuComponent component)

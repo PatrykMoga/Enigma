@@ -13,7 +13,7 @@ namespace EnigmaMachine.UIComponents.TopBar
             TopBarComponents = new List<TopBarItem>();
         }
 
-        public void PrintBars()
+        public void ShowBars()
         {
             foreach (var bar in TopBarComponents)
             {

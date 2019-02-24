@@ -31,10 +31,9 @@ namespace EnigmaMachine.Repository
             return reflector;
         }
 
-        public string AllRotorsNames => string.Join(", ", Repository.Rotors.Keys);
+        
+        public List<string> GetRotorsNames() => Repository.Rotors.Keys.ToList();
 
-        public List<string> RotorsNames => Repository.Rotors.Keys.ToList();
-
-        public string AllRefletorsNames => string.Join(", ", Repository.Reflectors.Keys);
+        public List<string> GetReflectorsNames() => Repository.Reflectors.Keys.ToList();
     }
 }

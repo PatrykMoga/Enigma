@@ -32,24 +32,26 @@ namespace EnigmaMachine.Machine.Decoding
 
         public string Decode(string message)
         {
+            var d = Decoder.ScramblerBoardService.ScramblerBoard;
+
             var strBuilder = new System.Text.StringBuilder();
             foreach (var ch in TranslationService.ConvertCharToEnigmaNumbers(message))
             {
-                Decoder.ScramblerBoardService.ScramblerBoard.Rotator.Rotate();
+                d.Rotator.Rotate();
 
-                byte buffer = Decoder.ScramblerBoardService.ScramblerBoard.Rotor3.DataRelay.PassValue(ch);
-                buffer = Decoder.ScramblerBoardService.ScramblerBoard.Rotor2.DataRelay.PassValue(buffer);
-                buffer = Decoder.ScramblerBoardService.ScramblerBoard.Rotor1.DataRelay.PassValue(buffer);
+                byte buffer = d.Rotor3.DataRelay.PassValue(ch);
+                buffer = d.Rotor2.DataRelay.PassValue(buffer);
+                buffer = d.Rotor1.DataRelay.PassValue(buffer);
 
-                buffer = Decoder.ScramblerBoardService.ScramblerBoard.Reflector.ReflectValue(buffer);
+                buffer = d.Reflector.ReflectValue(buffer);
 
-                buffer = Decoder.ScramblerBoardService.ScramblerBoard.Rotor1.DataRelay.ReceiveValue(buffer);
-                buffer = Decoder.ScramblerBoardService.ScramblerBoard.Rotor2.DataRelay.ReceiveValue(buffer);
-                buffer = Decoder.ScramblerBoardService.ScramblerBoard.Rotor3.DataRelay.ReceiveValue(buffer);
+                buffer = d.Rotor1.DataRelay.ReceiveValue(buffer);
+                buffer = d.Rotor2.DataRelay.ReceiveValue(buffer);
+                buffer = d.Rotor3.DataRelay.ReceiveValue(buffer);
 
                 strBuilder.Append(TranslationService.ConvertEnigmaNumbersToChar(buffer));
             }
             return strBuilder.ToString();
-        }        
+        }
     }
 }
