@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using EnigmaMachine.Reflectors;
-using EnigmaMachine.Rotors;
+﻿using EnigmaMachine.Machine.Decoding;
 using EnigmaMachine.Setup;
-using EnigmaMachine.MenuComponents;
-using EnigmaMachine.Machine.Decoding;
+using EnigmaMachine.UIComponents.Menu;
 using EnigmaMachine.UIComponents.TopBar;
 
 namespace EnigmaMachine.Machine
 {
     public class Enigma 
     {        
-        public DecoderService DecoderService { get; set; }
+        public DecoderService DecoderService { get; }
         public SetupService SetupService { get; }
 
         public MenuService Menu { get; }

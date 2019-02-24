@@ -1,37 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using EnigmaMachine.Rotors;
+﻿using System.Collections.Generic;
+using static System.Console;
 
-namespace EnigmaMachine.MenuComponents
+namespace EnigmaMachine.UIComponents.Menu
 {
     public class MenuService
     {
         private int _index = 1;
-        public Dictionary<int,MenuItem> MenuItems { get; set; }
+        public Dictionary<int, MenuItem> MenuItems { get; set; }
 
         public MenuService()
         {
             MenuItems = new Dictionary<int, MenuItem>();
         }
-       
+
         public void PrintMenu()
         {
-            
+
             foreach (var item in MenuItems)
-            {                
-                Console.WriteLine($"{item.Key}: {item.Value.Name}");          
+            {
+                WriteLine($"{item.Key}: {item.Value.Name}");
             }
-            Console.WriteLine();
+            WriteLine();
 
             while (true)
             {
-                var input = Console.ReadLine();
+                var input = ReadLine();
                 ExecuteComponent(input);
                 break;
             }
-            Console.Clear();
+            Clear();
         }
 
         public void AddComponent(IMenuComponent component)
@@ -52,11 +49,11 @@ namespace EnigmaMachine.MenuComponents
                 }
                 else
                 {
-                    Console.WriteLine("Wrong command press enter and try again!");
-                    Console.ReadKey();
-                    Console.Clear();
+                    WriteLine("Wrong command press enter and try again!");
+                    ReadKey();
+                    Clear();
                 }
-            }           
+            }
         }
     }
 }

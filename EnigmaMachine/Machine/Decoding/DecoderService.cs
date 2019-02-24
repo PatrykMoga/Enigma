@@ -1,5 +1,5 @@
 ﻿using EnigmaMachine.Machine.Boards;
-using EnigmaMachine.MenuComponents;
+using EnigmaMachine.UIComponents.Menu;
 using System;
 
 namespace EnigmaMachine.Machine.Decoding

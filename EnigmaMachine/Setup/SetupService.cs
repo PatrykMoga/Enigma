@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using EnigmaMachine.Repository;
 using EnigmaMachine.Rotors;
-using EnigmaMachine.MenuComponents;
+using EnigmaMachine.UIComponents.Menu;
 using EnigmaMachine.Machine.Boards;
 using static System.Console;
 

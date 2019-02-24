@@ -22,11 +22,15 @@ namespace EnigmaMachine.Machine.Boards
         
         public void AddPlugConnection(char c, char h)
         {
-            if (!(PlugBoard.Plugs.ContainsKey(c) && PlugBoard.Plugs.ContainsKey(h) && PlugBoard.Plugs.ContainsValue(c) && PlugBoard.Plugs.ContainsValue(h)))
+            var p = PlugBoard.Plugs;
+            if (!(p.ContainsKey(c) && p.ContainsKey(h) && p.ContainsValue(c) && p.ContainsValue(h)))
             {
-                PlugBoard.Plugs.Add(c, h);
+                p.Add(c, h);
             }
-            Console.WriteLine("Wronga");
+            else
+            {
+                Console.WriteLine("Wronga");
+            }         
         }
 
         private void PrintPlugBoard()

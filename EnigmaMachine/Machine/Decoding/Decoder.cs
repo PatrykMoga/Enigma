@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using EnigmaMachine.MenuComponents;
+using EnigmaMachine.UIComponents.Menu;
 using EnigmaMachine.Rotors;
 using EnigmaMachine.Machine.Boards;
 
@@ -15,6 +15,7 @@ namespace EnigmaMachine.Machine.Decoding
         public Decoder(ScramblerBoard scramblerBoard)
         {
             ScramblerBoardService = new ScramblerBoardService(scramblerBoard);
+            PlugBoardService = new PlugBoardService();
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnigmaMachine.MenuComponents
+namespace EnigmaMachine.UIComponents.Menu
 {
     public interface IMenuComponent
     {

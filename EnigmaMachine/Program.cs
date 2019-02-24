@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using EnigmaMachine.Rotors;
-using EnigmaMachine.Reflectors;
-using EnigmaMachine.Machine;
-using EnigmaMachine.Repository;
-using EnigmaMachine.Setup;
+﻿using EnigmaMachine.Machine;
 
 namespace EnigmaMachine
 {
