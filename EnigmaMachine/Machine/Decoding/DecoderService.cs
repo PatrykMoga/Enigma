@@ -9,9 +9,9 @@ namespace EnigmaMachine.Machine.Decoding
         public Decoder Decoder { get; }
         public MenuItem[] MenuItems { get; }
 
-        public DecoderService(ScramblerBoard scramblerBoard)
+        public DecoderService(ScramblerBoard scramblerBoard, PlugBoard plugBoard)
         {
-            Decoder = new Decoder(scramblerBoard);
+            Decoder = new Decoder(scramblerBoard,plugBoard);
 
             MenuItems = new[]
             {

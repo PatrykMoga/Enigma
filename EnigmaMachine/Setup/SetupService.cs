@@ -23,14 +23,15 @@ namespace EnigmaMachine.Setup
             ScramblerBoard =
                 new ScramblerBoard(_provider.GetRotor("I"), _provider.GetRotor("II"), _provider.GetRotor("III"), _provider.GetReflector("UKW B"));
 
-            PlugBoard = new PlugBoard();
+            PlugBoard = new PlugBoard(new Dictionary<char, char>());
 
             MenuItems = new[]
             {
                 new MenuItem("Setup rotors",SetUpRotors),
                 new MenuItem("Setup positions",SetUpPositions),
                 new MenuItem("Reset positions",ResetPositions),
-                new MenuItem("Setup reflector",SetUpReflector)
+                new MenuItem("Setup reflector",SetUpReflector),
+                new MenuItem("Add plugs connection",SetupPlugs)
             };
         }
 
@@ -125,7 +126,23 @@ namespace EnigmaMachine.Setup
 
         private void SetupPlugs()
         {
-            PlugBoard.Plugs.Add('a', 't');
+            var p = PlugBoard.Plugs;
+            var input = ReadLine();
+            AddPlugConnection(input[0], input[1]);
+            
+        }
+
+        public void AddPlugConnection(char c, char h)
+        {
+            var p = PlugBoard.Plugs;
+            if (!p.ContainsKey(c) && !p.ContainsKey(h) && !p.ContainsValue(c) && !p.ContainsValue(h))
+            {
+                p.Add(c, h);
+            }
+            else
+            {
+                Console.WriteLine("Wronga");
+            }
         }
     }
 }

@@ -10,13 +10,13 @@ namespace EnigmaMachine.Machine.Boards
         public PlugBoard PlugBoard { get; set; }
         public TopBarItem[] TopBarComponents { get; }
 
-        public PlugBoardService()
+        public PlugBoardService(PlugBoard plugBoard)
         {
-            PlugBoard = new PlugBoard();
+            PlugBoard = plugBoard;
 
             TopBarComponents = new[]
             {
-                new TopBarItem(PrintPlugBoard)
+                new TopBarItem(ShowPlugBoard)
             };
         }
         
@@ -33,12 +33,27 @@ namespace EnigmaMachine.Machine.Boards
             }         
         }
 
-        private void PrintPlugBoard()
+        private void ShowPlugBoard()
         {
-            foreach (var plug in PlugBoard.Plugs)
+            var sb = new StringBuilder();
+            if (PlugBoard.Plugs.Count > 0)
             {
-                Console.Write($"{plug.Key}-{plug.Value}");
+                foreach (var plug in PlugBoard.Plugs)
+                {
+                    sb.Append($"{plug.Key}-{plug.Value} |");
+
+                }
             }
+            else
+            {
+                sb.Append("No plugs pluged");
+            }
+           
+            Console.WriteLine("Plugs connections:");
+            Extensions.PrintLines(sb.Length);
+            Console.WriteLine(sb.ToString());
+            Extensions.PrintLines(sb.Length);
+            Console.WriteLine();
         }
     }
 }

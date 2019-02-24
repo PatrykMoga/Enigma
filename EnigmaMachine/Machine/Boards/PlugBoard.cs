@@ -8,9 +8,9 @@ namespace EnigmaMachine.Machine.Boards
     {
         public Dictionary <char,char> Plugs { get; set; }
 
-        public PlugBoard()
+        public PlugBoard(Dictionary<char,char> plugs)
         {
-            Plugs = new Dictionary<char, char>();
+            Plugs = plugs;
         }
     }
 }

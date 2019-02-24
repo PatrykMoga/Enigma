@@ -16,10 +16,11 @@ namespace EnigmaMachine.Machine
         public Enigma()
         {
             SetupService = new SetupService();
-            DecoderService = new DecoderService(SetupService.ScramblerBoard);
+            DecoderService = new DecoderService(SetupService.ScramblerBoard,SetupService.PlugBoard);
 
             TopBar = new TopBarService();
             TopBar.AddComponent(DecoderService.Decoder.ScramblerBoardService);
+            TopBar.AddComponent(DecoderService.Decoder.PlugBoardService);
 
             Menu = new MenuService();
             Menu.AddComponent(DecoderService);
