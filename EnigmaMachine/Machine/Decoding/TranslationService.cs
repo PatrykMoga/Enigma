@@ -41,7 +41,7 @@ namespace EnigmaMachine.Machine
                 {'Z',25}
             };
         }
-        public static List<byte> ConvertCharToEnigmaNumbers(string str)
+        public static List<byte> ConvertToNumber(string str)
         {
             var list = new List<byte>();           
             foreach (var ch in str.ToUpper())
@@ -54,6 +54,6 @@ namespace EnigmaMachine.Machine
             return list;
         }
 
-        public static char ConvertEnigmaNumbersToChar(byte number) => _dictionary.First(x => x.Value == number).Key;
+        public static char ConvertToChar(byte number) => _dictionary.First(x => x.Value == number).Key;
     }
 }

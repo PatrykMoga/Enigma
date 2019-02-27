@@ -6,8 +6,6 @@ namespace EnigmaMachine.Rotors
 {
     public interface IDataRelay
     {
-        IRotor Rotor { get; set; }
-
         byte PassValue(byte index);
         byte ReceiveValue(byte value);
     }

@@ -8,8 +8,6 @@ namespace EnigmaMachine.Rotors
     {
         string Name { get; }
         IDataRelay DataRelay { get; }
-        Dictionary<byte, byte> Values { get; }
-
         byte Position { get; set; }
         byte TurnoverPosition { get; }     
     }

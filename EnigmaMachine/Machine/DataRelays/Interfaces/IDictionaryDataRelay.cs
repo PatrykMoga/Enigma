@@ -4,8 +4,8 @@ using System.Text;
 
 namespace EnigmaMachine.Rotors
 {
-    public interface IDictionaryRotor : IRotor
+    public interface IDictionaryDataRelay : IDataRelay
     {
-        Dictionary<byte, byte> Values { get; }
+        IDictionaryRotor Rotor { get; set; }
     }
 }

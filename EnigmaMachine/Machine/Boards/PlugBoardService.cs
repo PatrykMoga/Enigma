@@ -20,17 +20,17 @@ namespace EnigmaMachine.Machine.Boards
             };
         }
         
-        public string ProvidePlugs(string message)
+        public string SwapMessage(string message)
         {
             var sb = new StringBuilder();
             foreach (var ch in message.ToUpper())
             {
-                sb.Append(SwapChars(ch));
+                sb.Append(SwapChar(ch));
             }
             return sb.ToString();
         }
 
-        public char SwapChars(char ch)
+        public char SwapChar(char ch)
         {
             foreach (var plug in PlugBoard.Plugs)
             {

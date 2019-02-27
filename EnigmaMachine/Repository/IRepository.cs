@@ -6,7 +6,7 @@ namespace EnigmaMachine.Repository
 {
     public interface IRepository
     {
-        Dictionary<string, Rotor> Rotors { get; }
+        Dictionary<string, DictionaryRotor> Rotors { get; }
         Dictionary<string, DictionaryReflector> Reflectors { get; }
     }
 }

@@ -9,7 +9,7 @@ namespace EnigmaMachine.Machine.Boards
 {
     public class ScramblerBoard 
     {
-        public Rotator Rotator { get; }
+        public RotatorService Rotator { get; }
         public IReflector Reflector { get; set; }
 
         public IRotor Rotor1 { get; set; }
@@ -18,7 +18,7 @@ namespace EnigmaMachine.Machine.Boards
 
         public ScramblerBoard(IRotor rotor1, IRotor rotor2, IRotor rotor3, IReflector reflector)
         {
-            Rotator = new Rotator(this);
+            Rotator = new RotatorService(this);
             Reflector = reflector;
 
             Rotor1 = rotor1;

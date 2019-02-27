@@ -16,11 +16,11 @@ namespace EnigmaMachine.Repository
             Repository = repository;
         }
 
-        public Rotor GetRotor(string name)
+        public DictionaryRotor GetRotor(string name)
         {
-            Repository.Rotors.TryGetValue(name, out Rotor rotor);
+            Repository.Rotors.TryGetValue(name, out DictionaryRotor rotor);
 
-            var list = new List<Rotor>();
+            var list = new List<DictionaryRotor>();
             list.Find(r => r.Name == name);
             return rotor;
         }

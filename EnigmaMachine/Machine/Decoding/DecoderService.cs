@@ -32,10 +32,10 @@ namespace EnigmaMachine.Machine.Decoding
 
         public string Decode(string message)
         {
-            var d = Decoder.ScramblerBoardService.ScramblerBoard;
-            var plug = Decoder.PlugBoardService.ProvidePlugs(message);
+            var d = Decoder.ScramblerBoardService.ScramblerBoard;           
             var strBuilder = new System.Text.StringBuilder();
-            foreach (var ch in TranslationService.ConvertCharToEnigmaNumbers(plug))
+            message = Decoder.PlugBoardService.SwapMessage(message);
+            foreach (var ch in TranslationService.ConvertToNumber(message))
             {
                 d.Rotator.Rotate();
 
@@ -48,10 +48,12 @@ namespace EnigmaMachine.Machine.Decoding
                 buffer = d.Rotor1.DataRelay.ReceiveValue(buffer);
                 buffer = d.Rotor2.DataRelay.ReceiveValue(buffer);
                 buffer = d.Rotor3.DataRelay.ReceiveValue(buffer);
-                
-                strBuilder.Append(TranslationService.ConvertEnigmaNumbersToChar(buffer));
+
+                var c = TranslationService.ConvertToChar(buffer);
+
+                strBuilder.Append(Decoder.PlugBoardService.SwapChar(c));
             }
-            return Decoder.PlugBoardService.ProvidePlugs(strBuilder.ToString());
+            return strBuilder.ToString();
         }
     }
 }

@@ -8,7 +8,6 @@ namespace EnigmaMachine.Machine.Boards
     public class ScramblerBoardService : ITopBarComponent
     {
         public ScramblerBoard ScramblerBoard { get; }
-
         public TopBarItem[] TopBarComponents { get; }
 
         public ScramblerBoardService(ScramblerBoard scramblerBoard)

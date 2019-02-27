@@ -5,11 +5,11 @@ using EnigmaMachine.Machine.Boards;
 
 namespace EnigmaMachine.Rotors
 {
-    public class Rotator
+    public class RotatorService
     {
         private readonly ScramblerBoard _board;
 
-        public Rotator(ScramblerBoard board)
+        public RotatorService(ScramblerBoard board)
         {
             _board = board;
         }

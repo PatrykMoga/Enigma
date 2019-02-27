@@ -83,7 +83,7 @@ namespace EnigmaMachine.Setup
             }
         }
 
-        private Rotor SetRotor(List<string> names, int number)
+        private DictionaryRotor SetRotor(List<string> names, int number)
         {           
             var rotors = $"Availble rotors: {string.Join(", ", names)}";
             Extensions.PrintLines(rotors.Length);
