@@ -1,23 +1,12 @@
-﻿using EnigmaMachine.Machine.Boards;
-using EnigmaMachine.Machine.Rotors;
-using EnigmaMachine.UIComponents.Menu;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EnigmaMachine.UIComponents.Menu;
 using static System.Console;
 
-namespace EnigmaMachine.Setup
+namespace EnigmaMachine.Setups
 {
-    public class ReflectorSetup : IMenuComponent
+    public class ReflectorSetups : SetupBase
     {
-        public SetupService SetupService { get; }
-
-        public MenuItem[] MenuItems { get; }
-
-        public ReflectorSetup(SetupService setupService)
+        public ReflectorSetups(SetupService setupService) : base(setupService)
         {
-            SetupService = setupService;
-
             MenuItems = new[]
             {
                 new MenuItem("Setup reflector",SetupReflector),

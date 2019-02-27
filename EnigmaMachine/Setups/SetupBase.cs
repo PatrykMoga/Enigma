@@ -1,13 +1,6 @@
-﻿using EnigmaMachine.Machine.Boards;
-using EnigmaMachine.Machine.Rotors;
-using EnigmaMachine.Repository;
-using EnigmaMachine.UIComponents.Menu;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using static System.Console;
+﻿using EnigmaMachine.UIComponents.Menu;
 
-namespace EnigmaMachine.Setup
+namespace EnigmaMachine.Setups
 {
     public abstract class SetupBase : IMenuComponent
     {

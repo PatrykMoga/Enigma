@@ -1,15 +1,11 @@
-﻿using EnigmaMachine.Machine.Boards;
-using EnigmaMachine.Machine.Rotors;
-using EnigmaMachine.UIComponents.Menu;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EnigmaMachine.UIComponents.Menu;
 using static System.Console;
-namespace EnigmaMachine.Setup
+
+namespace EnigmaMachine.Setups
 {
-    public class PlugsSetup : SetupBase
+    public class PlugsSetups : SetupBase
     {
-        public PlugsSetup(SetupService setupService) : base(setupService)
+        public PlugsSetups(SetupService setupService) : base(setupService)
         {
             MenuItems = new[]
             {
@@ -28,7 +24,6 @@ namespace EnigmaMachine.Setup
             var input = ReadLine();
             input = input.ToUpper();
             AddPlugConnection(input[0], input[1]);
-
         }
 
         public void AddPlugConnection(char c, char h)
@@ -40,7 +35,7 @@ namespace EnigmaMachine.Setup
             }
             else
             {
-                Console.WriteLine("Plug is already connected or input is in wrong format");
+                WriteLine("Plug is already connected or input is in wrong format");
             }
         }
     }

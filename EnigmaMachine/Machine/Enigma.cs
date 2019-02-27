@@ -1,5 +1,5 @@
 ﻿using EnigmaMachine.Machine.Decoding;
-using EnigmaMachine.Setup;
+using EnigmaMachine.Setups;
 using EnigmaMachine.UIComponents.Menu;
 using EnigmaMachine.UIComponents.TopBar;
 
@@ -24,10 +24,10 @@ namespace EnigmaMachine.Machine
 
             Menu = new MenuService();
             Menu.AddComponent(DecoderService);
-            Menu.AddComponent(SetupService.Rotors);          
-            Menu.AddComponent(SetupService.Reflector);          
-            Menu.AddComponent(SetupService.Plugs);          
-            Menu.AddComponent(SetupService);          
+            Menu.AddComponent(SetupService.RotorsSetups);          
+            Menu.AddComponent(SetupService.ReflectorSetups);          
+            Menu.AddComponent(SetupService.PlugsSetups);          
+            Menu.AddComponent(SetupService.AdditionalSetups);          
         }
       
         public void Initialize()
