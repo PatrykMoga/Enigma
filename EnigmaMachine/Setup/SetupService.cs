@@ -27,10 +27,10 @@ namespace EnigmaMachine.Setup
 
             MenuItems = new[]
             {
-                new MenuItem("Setup rotors",SetUpRotors),
-                new MenuItem("Setup rotors positions",SetUpPositions),
-                new MenuItem("Reset rotors positions",ResetPositions),
-                new MenuItem("Setup reflector",SetUpReflector),
+                new MenuItem("Setup rotors",SetupRotors),
+                new MenuItem("Setup rotors positions",SetupRotorsPositions),
+                new MenuItem("Reset rotors positions",ResetRotorsPositions),
+                new MenuItem("Setup reflector",SetupReflector),
                 new MenuItem("Add plug connection",SetupPlugs),
                 new MenuItem("Reset plugs connection",ResetPlugs),
                 new MenuItem("Exit", Exit)
@@ -45,9 +45,9 @@ namespace EnigmaMachine.Setup
 
         private void ResetPlugs() => PlugBoard.Plugs.Clear();
 
-        private void ResetPositions() => ScramblerBoard.Rotator.ResetPositions();
+        private void ResetRotorsPositions() => ScramblerBoard.Rotator.ResetPositions();
 
-        public void SetUpRotors()
+        public void SetupRotors()
         {
             Clear();
             var names = _provider.GetRotorsNames();
@@ -58,7 +58,7 @@ namespace EnigmaMachine.Setup
             Clear();
         }
 
-        public void SetUpPositions()
+        public void SetupRotorsPositions()
         {
             Write($"Set position of Rotor1: ");
             ScramblerBoard.Rotor1.Position = SetRotorPosition();
@@ -108,7 +108,7 @@ namespace EnigmaMachine.Setup
             }
         }
 
-        private void SetUpReflector()
+        private void SetupReflector()
         {
             var reflectors = _provider.GetReflectorsNames();
             var reflector = $"Availble reflectors: {string.Join(", ", reflectors)}";
