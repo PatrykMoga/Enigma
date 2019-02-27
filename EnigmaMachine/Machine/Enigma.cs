@@ -24,6 +24,9 @@ namespace EnigmaMachine.Machine
 
             Menu = new MenuService();
             Menu.AddComponent(DecoderService);
+            Menu.AddComponent(SetupService.Rotors);          
+            Menu.AddComponent(SetupService.Reflector);          
+            Menu.AddComponent(SetupService.Plugs);          
             Menu.AddComponent(SetupService);          
         }
       
