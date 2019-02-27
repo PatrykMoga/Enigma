@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EnigmaMachine.UIComponents.Menu;
-using EnigmaMachine.Rotors;
-using EnigmaMachine.Machine.Boards;
+﻿using EnigmaMachine.Machine.Boards;
 
 namespace EnigmaMachine.Machine.Decoding
 {

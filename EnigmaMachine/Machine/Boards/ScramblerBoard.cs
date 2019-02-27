@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EnigmaMachine.Reflectors;
-using EnigmaMachine.Rotors;
-using EnigmaMachine.UIComponents.TopBar;
+﻿using EnigmaMachine.Machine.Reflectors;
+using EnigmaMachine.Machine.Rotator;
+using EnigmaMachine.Machine.Rotors;
 
 namespace EnigmaMachine.Machine.Boards
 {

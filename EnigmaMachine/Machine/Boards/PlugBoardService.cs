@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EnigmaMachine.UIComponents.TopBar;
+using System;
 using System.Text;
-using EnigmaMachine.UIComponents.TopBar;
 
 namespace EnigmaMachine.Machine.Boards
 {
@@ -58,13 +57,11 @@ namespace EnigmaMachine.Machine.Boards
             }
             else
             {
-                sb.Append("No plugs plugegd");
+                sb.Append("No plugs connected");
             }
            
-            Console.WriteLine("Plugs connections:");
-            Extensions.PrintLines(sb.Length);
-            Console.WriteLine(sb.ToString());
-            Extensions.PrintLines(sb.Length);
+            Console.WriteLine("Plugs connections:");          
+            Extensions.PrintInLines(sb.ToString());
             Console.WriteLine();
         }
     }

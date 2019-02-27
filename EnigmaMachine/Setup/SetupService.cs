@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EnigmaMachine.Machine.Boards;
+using EnigmaMachine.Machine.Rotors;
 using EnigmaMachine.Repository;
-using EnigmaMachine.Rotors;
 using EnigmaMachine.UIComponents.Menu;
-using EnigmaMachine.Machine.Boards;
+using System;
+using System.Collections.Generic;
 using static System.Console;
 
 namespace EnigmaMachine.Setup
@@ -28,26 +28,28 @@ namespace EnigmaMachine.Setup
             MenuItems = new[]
             {
                 new MenuItem("Setup rotors",SetUpRotors),
-                new MenuItem("Setup positions",SetUpPositions),
-                new MenuItem("Reset positions",ResetPositions),
+                new MenuItem("Setup rotors positions",SetUpPositions),
+                new MenuItem("Reset rotors positions",ResetPositions),
                 new MenuItem("Setup reflector",SetUpReflector),
-                new MenuItem("Add plugs connection",SetupPlugs),
-                new MenuItem("Reset plugs connection",ResetPlugs)
+                new MenuItem("Add plug connection",SetupPlugs),
+                new MenuItem("Reset plugs connection",ResetPlugs),
+                new MenuItem("Exit", Exit)
             };
         }
 
-        private void ResetPlugs()
+        private void Exit()
         {
-            PlugBoard.Plugs.Clear();
+            WriteLine("Goodbye!");
+            Environment.Exit(0);
         }
 
-        private void ResetPositions()
-        {
-            ScramblerBoard.Rotator.ResetPositions();
-        }
+        private void ResetPlugs() => PlugBoard.Plugs.Clear();
+
+        private void ResetPositions() => ScramblerBoard.Rotator.ResetPositions();
 
         public void SetUpRotors()
         {
+            Clear();
             var names = _provider.GetRotorsNames();
             ScramblerBoard.Rotor1 = SetRotor(names, 1);
             ScramblerBoard.Rotor2 = SetRotor(names, 2);
@@ -83,14 +85,14 @@ namespace EnigmaMachine.Setup
             }
         }
 
-        private DictionaryRotor SetRotor(List<string> names, int number)
+        private IRotor SetRotor(List<string> names, int number)
         {           
             var rotors = $"Availble rotors: {string.Join(", ", names)}";
-            Extensions.PrintLines(rotors.Length);
-            WriteLine(rotors);
-            Extensions.PrintLines(rotors.Length);
+
+            Extensions.PrintInLines(rotors);
             WriteLine();
             Write($"Set Rotor{number}: ");
+
             while (true)
             {
                 var input = ReadLine();
@@ -110,11 +112,11 @@ namespace EnigmaMachine.Setup
         {
             var reflectors = _provider.GetReflectorsNames();
             var reflector = $"Availble reflectors: {string.Join(", ", reflectors)}";
-            Extensions.PrintLines(reflector.Length);
-            WriteLine(reflector);
-            Extensions.PrintLines(reflector.Length);
+            
+            Extensions.PrintInLines(reflector);
             WriteLine();
             Write($"Set reflector: ");
+
             while (true)
             {
                 var input = ReadLine();
@@ -132,6 +134,8 @@ namespace EnigmaMachine.Setup
 
         private void SetupPlugs()
         {
+            Clear();
+            Write("Enter the connection in this format (XY): ");
             var p = PlugBoard.Plugs;
             var input = ReadLine();
             input = input.ToUpper();
@@ -148,7 +152,7 @@ namespace EnigmaMachine.Setup
             }
             else
             {
-                Console.WriteLine("Wronga");
+                Console.WriteLine("Plug is already connected or input is in wrong format");
             }
         }
     }

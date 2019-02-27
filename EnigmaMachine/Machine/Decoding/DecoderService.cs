@@ -21,20 +21,23 @@ namespace EnigmaMachine.Machine.Decoding
 
         public void StartDecoding()
         {
-            Console.Write("Type message: ");
-            var message = Console.ReadLine();
-            Extensions.PrintLines(message.Length);
-            Console.WriteLine(Decode(message));
-            Extensions.PrintLines(message.Length);
+            Console.Clear();
+            Console.Write("Input message: ");
+            var input = Console.ReadLine();
+            var output = $"Output message: {Decode(input)}";
+            
+            Extensions.PrintInLines(output);
             Console.ReadKey();
             Console.Clear();
         }
 
         public string Decode(string message)
         {
-            var d = Decoder.ScramblerBoardService.ScramblerBoard;           
+            var d = Decoder.ScramblerBoardService.ScramblerBoard;     
+            
             var strBuilder = new System.Text.StringBuilder();
             message = Decoder.PlugBoardService.SwapMessage(message);
+
             foreach (var ch in TranslationService.ConvertToNumber(message))
             {
                 d.Rotator.Rotate();

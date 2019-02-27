@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using EnigmaMachine.Machine.Boards;
 
-namespace EnigmaMachine.Rotors
+namespace EnigmaMachine.Machine.Rotator
 {
     public class RotatorService
     {

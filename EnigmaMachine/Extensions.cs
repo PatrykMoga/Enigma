@@ -6,10 +6,19 @@ namespace EnigmaMachine
 {
     public static class Extensions
     {
-        public static void PrintLines(int number)
+        public static void PrintLines(string str)
         {
             var sb = new StringBuilder();
-            sb.Append('=', number);
+            sb.Append('=', str.Length);
+            Console.WriteLine(sb.ToString());
+        }
+
+        public static void PrintInLines(string str)
+        {
+            var sb = new StringBuilder();
+            sb.Append('=', str.Length);
+            sb.Append($"\n{str}\n");
+            sb.Append('=', str.Length);
             Console.WriteLine(sb.ToString());
         }
     }

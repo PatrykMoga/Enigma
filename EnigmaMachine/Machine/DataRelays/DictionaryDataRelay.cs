@@ -1,9 +1,8 @@
-﻿using System;
+﻿using EnigmaMachine.Machine.Rotors;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
-namespace EnigmaMachine.Rotors
+namespace EnigmaMachine.Machine.DataRelays
 {
     public class DictionaryDataRelay : IDictionaryDataRelay
     {

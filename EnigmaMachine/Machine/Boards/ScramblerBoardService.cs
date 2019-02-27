@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EnigmaMachine.UIComponents.TopBar;
+﻿using EnigmaMachine.UIComponents.TopBar;
+using System;
 
 namespace EnigmaMachine.Machine.Boards
 {
@@ -27,10 +25,8 @@ namespace EnigmaMachine.Machine.Boards
             var rotor2 = $"{ScramblerBoard.Rotor2.Name}: {ScramblerBoard.Rotor2.Position}";
             var rotor3 = $"{ScramblerBoard.Rotor3.Name}: {ScramblerBoard.Rotor3.Position}";
             var bar = $"Current: {reflector} | {rotor1} | {rotor2} | {rotor3}";
-
-            Extensions.PrintLines(bar.Length);
-            Console.WriteLine(bar);
-            Extensions.PrintLines(bar.Length);
+          
+            Extensions.PrintInLines(bar);
             Console.WriteLine();
         }
     }

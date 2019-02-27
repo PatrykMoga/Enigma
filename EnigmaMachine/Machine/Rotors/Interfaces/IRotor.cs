@@ -1,8 +1,9 @@
-﻿using System;
+﻿using EnigmaMachine.Machine.DataRelays;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnigmaMachine.Rotors
+namespace EnigmaMachine.Machine.Rotors
 {
     public interface IRotor
     {

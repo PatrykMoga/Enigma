@@ -1,20 +1,17 @@
-﻿using System;
+﻿using EnigmaMachine.Machine.Reflectors;
+using EnigmaMachine.Machine.Rotors;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using EnigmaMachine.Reflectors;
-using EnigmaMachine.Rotors;
 
 namespace EnigmaMachine.Repository
 {
     public class MemoryRepository : IRepository
     {
-        public Dictionary<string, DictionaryRotor> Rotors { get; }
-        public Dictionary<string, DictionaryReflector> Reflectors { get; }
+        public Dictionary<string, IRotor> Rotors { get; }
+        public Dictionary<string, IReflector> Reflectors { get; }
 
         public MemoryRepository()
         {
-            Reflectors = new Dictionary<string, DictionaryReflector>()
+            Reflectors = new Dictionary<string, IReflector>()
             {
                 {"UKW B", new DictionaryReflector("UKW B",new Dictionary<byte,byte>(){
                     {0,24},
@@ -46,7 +43,7 @@ namespace EnigmaMachine.Repository
                     {18,20},}) }
             };
 
-            Rotors = new Dictionary<string, DictionaryRotor>()
+            Rotors = new Dictionary<string, IRotor>()
             {
                 {"I",new DictionaryRotor("I",new Dictionary<byte, byte>(){
                     {0,4},

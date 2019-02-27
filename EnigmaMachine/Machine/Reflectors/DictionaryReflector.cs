@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace EnigmaMachine.Reflectors
+namespace EnigmaMachine.Machine.Reflectors
 {
     public class DictionaryReflector : IReflector
     {

@@ -1,9 +1,7 @@
-﻿using System;
+﻿using EnigmaMachine.Machine.Reflectors;
+using EnigmaMachine.Machine.Rotors;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using EnigmaMachine.Reflectors;
-using EnigmaMachine.Rotors;
 
 namespace EnigmaMachine.Repository
 {
@@ -16,18 +14,18 @@ namespace EnigmaMachine.Repository
             Repository = repository;
         }
 
-        public DictionaryRotor GetRotor(string name)
+        public IRotor GetRotor(string name)
         {
-            Repository.Rotors.TryGetValue(name, out DictionaryRotor rotor);
+            Repository.Rotors.TryGetValue(name, out IRotor rotor);
 
             var list = new List<DictionaryRotor>();
             list.Find(r => r.Name == name);
             return rotor;
         }
 
-        public DictionaryReflector GetReflector(string name)
+        public IReflector GetReflector(string name)
         {
-            Repository.Reflectors.TryGetValue(name, out DictionaryReflector reflector);
+            Repository.Reflectors.TryGetValue(name, out IReflector reflector);
             return reflector;
         }
 

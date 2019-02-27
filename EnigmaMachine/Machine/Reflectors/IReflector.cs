@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnigmaMachine.Reflectors
+namespace EnigmaMachine.Machine.Reflectors
 {
     public interface IReflector
     {

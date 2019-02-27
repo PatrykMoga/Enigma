@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EnigmaMachine.Machine.Boards;
 using EnigmaMachine.Repository;
-using EnigmaMachine.Rotors;
-using EnigmaMachine.UIComponents.Menu;
-using EnigmaMachine.Machine.Boards;
 
 namespace EnigmaMachine.Setup
 {
