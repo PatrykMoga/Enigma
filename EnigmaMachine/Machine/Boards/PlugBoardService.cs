@@ -20,17 +20,30 @@ namespace EnigmaMachine.Machine.Boards
             };
         }
         
-        public void AddPlugConnection(char c, char h)
+        public string ProvidePlugs(string message)
         {
-            var p = PlugBoard.Plugs;
-            if (!(p.ContainsKey(c) && p.ContainsKey(h) && p.ContainsValue(c) && p.ContainsValue(h)))
+            var sb = new StringBuilder();
+            foreach (var ch in message.ToUpper())
             {
-                p.Add(c, h);
+                sb.Append(SwapChars(ch));
             }
-            else
+            return sb.ToString();
+        }
+
+        public char SwapChars(char ch)
+        {
+            foreach (var plug in PlugBoard.Plugs)
             {
-                Console.WriteLine("Wronga");
-            }         
+                if (plug.Key == ch)
+                {
+                    return plug.Value;
+                }
+                if (plug.Value == ch)
+                {
+                    return plug.Key;
+                }              
+            }
+            return ch;
         }
 
         private void ShowPlugBoard()
@@ -41,12 +54,11 @@ namespace EnigmaMachine.Machine.Boards
                 foreach (var plug in PlugBoard.Plugs)
                 {
                     sb.Append($"{plug.Key}-{plug.Value} |");
-
                 }
             }
             else
             {
-                sb.Append("No plugs pluged");
+                sb.Append("No plugs plugegd");
             }
            
             Console.WriteLine("Plugs connections:");

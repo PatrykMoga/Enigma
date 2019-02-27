@@ -33,9 +33,9 @@ namespace EnigmaMachine.Machine.Decoding
         public string Decode(string message)
         {
             var d = Decoder.ScramblerBoardService.ScramblerBoard;
-
+            var plug = Decoder.PlugBoardService.ProvidePlugs(message);
             var strBuilder = new System.Text.StringBuilder();
-            foreach (var ch in TranslationService.ConvertCharToEnigmaNumbers(message))
+            foreach (var ch in TranslationService.ConvertCharToEnigmaNumbers(plug))
             {
                 d.Rotator.Rotate();
 
@@ -48,10 +48,10 @@ namespace EnigmaMachine.Machine.Decoding
                 buffer = d.Rotor1.DataRelay.ReceiveValue(buffer);
                 buffer = d.Rotor2.DataRelay.ReceiveValue(buffer);
                 buffer = d.Rotor3.DataRelay.ReceiveValue(buffer);
-
+                
                 strBuilder.Append(TranslationService.ConvertEnigmaNumbersToChar(buffer));
             }
-            return strBuilder.ToString();
+            return Decoder.PlugBoardService.ProvidePlugs(strBuilder.ToString());
         }
     }
 }

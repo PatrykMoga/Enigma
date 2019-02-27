@@ -31,8 +31,14 @@ namespace EnigmaMachine.Setup
                 new MenuItem("Setup positions",SetUpPositions),
                 new MenuItem("Reset positions",ResetPositions),
                 new MenuItem("Setup reflector",SetUpReflector),
-                new MenuItem("Add plugs connection",SetupPlugs)
+                new MenuItem("Add plugs connection",SetupPlugs),
+                new MenuItem("Reset plugs connection",ResetPlugs)
             };
+        }
+
+        private void ResetPlugs()
+        {
+            PlugBoard.Plugs.Clear();
         }
 
         private void ResetPositions()
@@ -128,6 +134,7 @@ namespace EnigmaMachine.Setup
         {
             var p = PlugBoard.Plugs;
             var input = ReadLine();
+            input = input.ToUpper();
             AddPlugConnection(input[0], input[1]);
             
         }
