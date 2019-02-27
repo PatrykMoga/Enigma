@@ -9,7 +9,10 @@ namespace EnigmaMachine.Rotors
     {
         public IRotor Rotor { get; set; }
 
-        public DataRelay(IRotor rotor) => Rotor = rotor;
+        public DataRelay(IRotor rotor)
+        {
+            Rotor = rotor;
+        }
 
         public byte PassValue(byte index)
         {
