@@ -22,12 +22,12 @@ namespace EnigmaMachine.Tests.MachineTests.BoardsTests
         }
 
         [Test]
-        [TestCase("ABCDEFG","TBCDEFG")]
-        [TestCase("AAAA","TTTT")]
-        [TestCase("TTTT","AAAA")]
-        [TestCase("HHHH","HHHH")]
+        [TestCase("ABCDEFG", "TBCDEFG")]
+        [TestCase("AAAA", "TTTT")]
+        [TestCase("TTTT", "AAAA")]
+        [TestCase("HHHH", "HHHH")]
         public void SwapMessage_WhenCalled_SwapingCharactersInMessage(string message, string expected)
-        {            
+        {
             var actual = _plugBoardService.SwapMessage(message);
             Assert.That(actual, Is.EqualTo(expected));
         }
