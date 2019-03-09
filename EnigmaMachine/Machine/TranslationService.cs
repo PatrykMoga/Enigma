@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EnigmaMachine.Machine.Decoding
+namespace EnigmaMachine.Machine
 {
     public static class TranslationService
     {
@@ -43,7 +43,7 @@ namespace EnigmaMachine.Machine.Decoding
         }
         public static List<byte> ConvertToNumber(string str)
         {
-            var list = new List<byte>();           
+            var list = new List<byte>();
             foreach (var ch in str.ToUpper())
             {
                 if (_dictionary.Keys.Contains(ch))

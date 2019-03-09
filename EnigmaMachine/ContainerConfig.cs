@@ -1,14 +1,6 @@
 ﻿using Autofac;
 using EnigmaMachine.Machine;
-using EnigmaMachine.Machine.Boards;
-using EnigmaMachine.Machine.Decoding;
-using EnigmaMachine.Machine.Reflectors;
-using EnigmaMachine.Machine.Rotator;
-using EnigmaMachine.Machine.Rotors;
 using EnigmaMachine.Repository;
-using EnigmaMachine.Setups;
-using EnigmaMachine.UIComponents.Menu;
-using EnigmaMachine.UIComponents.TopBar;
 
 namespace EnigmaMachine
 {
@@ -17,7 +9,17 @@ namespace EnigmaMachine
         public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<Enigma>();
+            builder.RegisterType<DecodingProcessor>();
+            builder.RegisterType<ScramblerBoard>().SingleInstance();
+            builder.RegisterType<ScramblerBoardService>();
+            builder.RegisterType<RotorProcessor>();
+            builder.RegisterType<DictionaryReflector>();
+            builder.RegisterType<RotatingService>();
+            builder.RegisterType<PlugBoardService>();
 
+            builder.RegisterType<MemoryDataProvider>();
+            builder.RegisterType<MemoryRepository>();
 
             return builder.Build();
         }

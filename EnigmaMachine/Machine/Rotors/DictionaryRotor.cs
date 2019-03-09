@@ -1,25 +1,12 @@
-﻿using EnigmaMachine.Machine.DataRelays;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace EnigmaMachine.Machine.Rotors
+namespace EnigmaMachine.Machine
 {
-    public class DictionaryRotor : IDictionaryRotor
+    public class DictionaryRotor
     {
-        public IDataRelay DataRelay { get; }
-
-        public string Name { get; }
-        public Dictionary<byte, byte> Values { get; }
-
-        public byte Position { get; set; }
-        public byte TurnoverPosition { get; }
-
-        public DictionaryRotor(string name, Dictionary<byte, byte> values, byte turnoverPosition)
-        {
-            Name = name;
-            DataRelay = new DictionaryDataRelay(this);
-            TurnoverPosition = turnoverPosition;
-            Values = values;
-            Position = 0;
-        }        
+        public string Name { get; set; }
+        public Dictionary<byte, byte> Values { get; set; }
+        public byte Position { get; set; } = 0;
+        public byte TurnoverPosition { get; set; }
     }
 }

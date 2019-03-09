@@ -1,42 +1,23 @@
-﻿using EnigmaMachine.Machine.Decoding;
-using EnigmaMachine.Setups;
-using EnigmaMachine.UIComponents.Menu;
-using EnigmaMachine.UIComponents.TopBar;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace EnigmaMachine.Machine
 {
-    public class Enigma 
-    {        
-        public DecoderService DecoderService { get; }
-        public SetupService SetupService { get; }
+    public class Enigma
+    {
+        public DecodingProcessor Procesor { get; }
 
-        public MenuService Menu { get; }
-        public TopBarService TopBar { get; }
-
-        public Enigma()
+        public Enigma(DecodingProcessor processor)
         {
-            SetupService = new SetupService();
-            DecoderService = new DecoderService(SetupService.ScramblerBoard,SetupService.PlugBoard);
-
-            TopBar = new TopBarService();
-            TopBar.AddComponent(DecoderService.Decoder.ScramblerBoardService);
-            TopBar.AddComponent(DecoderService.Decoder.PlugBoardService);
-
-            Menu = new MenuService();
-            Menu.AddComponent(DecoderService);
-            Menu.AddComponent(SetupService.RotorsSetups);          
-            Menu.AddComponent(SetupService.ReflectorSetups);          
-            Menu.AddComponent(SetupService.PlugsSetups);          
-            Menu.AddComponent(SetupService.AdditionalSetups);          
+            Procesor = processor;
         }
-      
+
         public void Initialize()
         {
-            while (true)
-            {              
-                TopBar.ShowBars();
-                Menu.PrintMenu();               
-            }              
-        }        
+            Console.ReadLine();
+            var output = Procesor.Decode("barbara");
+            Console.WriteLine(output);
+        }
     }
 }
