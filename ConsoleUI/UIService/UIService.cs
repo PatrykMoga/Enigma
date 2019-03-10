@@ -1,27 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using static System.Console;
 
 namespace ConsoleUI.UIComponents
 {
     public class UIService
     {
-        public IEnumerable<IUIComponent> UIComponents { get; set; }
+        private int _index = 1;
+        private IEnumerable<IUIComponent> _uiComponents;
+        private Dictionary<int, UIComponent> _executable;
+        private List<UIComponent> _actions;
 
         public UIService(IEnumerable<IUIComponent> uiComponents)
         {
-            UIComponents = uiComponents;
+            _uiComponents = uiComponents;
+            _executable = new Dictionary<int, UIComponent>();
+            _actions = new List<UIComponent>();
+            LoadComponents();
+        }
+
+        private void LoadComponents()
+        {
+            foreach (var components in _uiComponents)
+            {
+                foreach (var component in components.UIComponents)
+                {
+                    if (!component.Executable)
+                    {
+                        _actions.Add(component);
+                    }
+                    if (component.Executable)
+                    {
+                        _executable.Add(_index++, component);
+                    }
+                }
+            }
         }
 
         public void PrintComponents()
         {
-            foreach (var components in UIComponents)
+            foreach (var item in _actions)
             {
-                foreach (var component in components.UIComponents)
+                item.Action();
+            }
+            foreach (var item in _executable)
+            {
+                WriteLine($"{item.Key}: {item.Value.Name}");
+            }
+            WriteLine();
+
+            while (true)
+            {
+                var input = ReadLine();
+                ExecuteComponent(input);
+                break;
+            }
+            Clear();
+        }
+
+        private void ExecuteComponent(string actionKey)
+        {
+            if (int.TryParse(actionKey, out int key))
+            {
+                if (_executable.ContainsKey(key))
                 {
-                    component.Action();
+                    _executable[key].Action();
+                }
+                else
+                {
+                    WriteLine("Wrong command press enter and try again!");
+                    ReadKey();
+                    Clear();
                 }
             }
         }
+
     }
 }

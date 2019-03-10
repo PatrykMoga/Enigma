@@ -1,12 +1,12 @@
-﻿using ConsoleUI.Menu;
+﻿using ConsoleUI.UIComponents;
 using EnigmaLibrary;
 using static System.Console;
 
 namespace ConsoleUI.Setups
 {
-    public class ReflectorSetup : IMenuComponent
+    public class ReflectorSetup : IUIComponent
     {
-        public MenuItem[] MenuItems { get; }
+        public UIComponent[] UIComponents { get; }
         public ScramblerBoard Board { get; set; }
         public MemoryDataProvider DataProvider { get; }
 
@@ -15,9 +15,9 @@ namespace ConsoleUI.Setups
         {
             Board = board;
             DataProvider = dataProvider;
-            MenuItems = new[]
+            UIComponents = new[]
             {
-                new MenuItem("Setup reflector",SetupReflector),
+                new UIComponent("Setup reflector",SetupReflector),
             };
         }
       

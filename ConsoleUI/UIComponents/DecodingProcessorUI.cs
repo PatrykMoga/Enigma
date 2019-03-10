@@ -1,22 +1,19 @@
-﻿using ConsoleUI.Menu;
-using EnigmaLibrary;
+﻿using EnigmaLibrary;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleUI.UIComponents
 {
-    public class DecodingProcessorUI : IMenuComponent
+    public class DecodingProcessorUI : IUIComponent
     {
         public DecodingProcessor DecodingProcessor { get; }
-        public MenuItem[] MenuItems { get; }
+        public UIComponent[] UIComponents { get; }
 
         public DecodingProcessorUI(DecodingProcessor decodingProcessor)
         {
             DecodingProcessor = decodingProcessor;
-            MenuItems = new[]
+            UIComponents = new[]
             {
-                new MenuItem("Decode message",StartDecoding)
+                new UIComponent("Decode message",StartDecoding)
             };
         }
 

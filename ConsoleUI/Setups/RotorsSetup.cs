@@ -1,15 +1,13 @@
-﻿using ConsoleUI.Menu;
+﻿using ConsoleUI.UIComponents;
 using EnigmaLibrary;
-using System;
 using System.Collections.Generic;
 using static System.Console;
-using System.Text;
 
 namespace ConsoleUI.Setups
 {
-    public class RotorsSetup : IMenuComponent
+    public class RotorsSetup : IUIComponent
     {
-        public MenuItem[] MenuItems { get; }
+        public UIComponent[] UIComponents { get; }
         public ScramblerBoard ScramblerBoard { get; }
         public RotatingService RotatingService { get; }
         public MemoryDataProvider DataProvider { get; }
@@ -19,11 +17,11 @@ namespace ConsoleUI.Setups
             ScramblerBoard = scramblerBoard;
             RotatingService = rotatingService;
             DataProvider = dataProvider;
-            MenuItems = new[]
+            UIComponents = new[]
             {
-                new MenuItem("Setup rotors",SetupRotors),
-                new MenuItem("Setup rotors positions",SetupRotorsPositions),
-                new MenuItem("Reset rotors positions",ResetRotorsPositions),
+                new UIComponent("Setup rotors",SetupRotors),
+                new UIComponent("Setup rotors positions",SetupRotorsPositions),
+                new UIComponent("Reset rotors positions",ResetRotorsPositions),
             };
         }
 

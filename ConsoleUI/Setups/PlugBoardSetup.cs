@@ -1,21 +1,21 @@
-﻿using ConsoleUI.Menu;
+﻿using ConsoleUI.UIComponents;
 using EnigmaLibrary;
 using static System.Console;
 
 namespace ConsoleUI.Setups
 {
-    public class PlugBoardSetup : IMenuComponent
+    public class PlugBoardSetup : IUIComponent
     {
-        public MenuItem[] MenuItems { get; }
+        public UIComponent[] UIComponents { get; }
         public PlugBoard PlugBoard { get; }
 
         public PlugBoardSetup(PlugBoard plugBoard)
         {
             PlugBoard = plugBoard;
-            MenuItems = new[]
+            UIComponents = new[]
             {
-                new MenuItem("Add plug connection",SetupPlugs),
-                new MenuItem("Reset plugs connection",ResetPlugs),
+                new UIComponent("Add plug connection",SetupPlugs),
+                new UIComponent("Reset plugs connection",ResetPlugs),
             };
         }
 
