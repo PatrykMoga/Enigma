@@ -4,12 +4,12 @@ namespace EnigmaLibrary
 {
     public class DecodingProcessor
     {
-        public ScramblerBoard ScramblerBoard { get; }
-        public PlugBoard PlugBoardService { get; }
+        public ScrambleBoard ScramblerBoard { get; }
+        public PluginBoard PlugBoardService { get; }
         public RotatingService RotatingService { get; }
         public MemoryDataProvider MemoryDataProvider { get; }
 
-        public DecodingProcessor(ScramblerBoard scramblerBoard, PlugBoard plugBoardService,
+        public DecodingProcessor(ScrambleBoard scramblerBoard, PluginBoard plugBoardService,
             RotatingService rotatingService, MemoryDataProvider memoryDataProvider)
         {
             ScramblerBoard = scramblerBoard;

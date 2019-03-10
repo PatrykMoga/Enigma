@@ -5,9 +5,9 @@ namespace EnigmaLibrary
 {
     public class RotatingService
     {
-        public ScramblerBoard Board { get; }
+        public ScrambleBoard Board { get; }
 
-        public RotatingService(ScramblerBoard board)
+        public RotatingService(ScrambleBoard board)
         {
             Board = board;
         }

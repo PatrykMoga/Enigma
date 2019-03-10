@@ -14,11 +14,11 @@ namespace ConsoleUI
             {
                 builder.RegisterType<ConsoleUI>();
                 builder.RegisterType<UIService>();
-                builder.RegisterType<ScramblerBoardUI>().As<IUIComponent>();
-                builder.RegisterType<PlugBoardUI>().As<IUIComponent>();
+                builder.RegisterType<ScrambleBoardUI>().As<IUIComponent>();
+                builder.RegisterType<PluginBoardUI>().As<IUIComponent>();
                 builder.RegisterType<DecodingProcessorUI>().As<IUIComponent>();
                 builder.RegisterType<ReflectorSetup>().As<IUIComponent>();
-                builder.RegisterType<PlugBoardSetup>().As<IUIComponent>();
+                builder.RegisterType<PluginBoardSetup>().As<IUIComponent>();
                 builder.RegisterType<RotorsSetup>().As<IUIComponent>();
                 builder.RegisterType<AdditionalSetups>().As<IUIComponent>();
             }))

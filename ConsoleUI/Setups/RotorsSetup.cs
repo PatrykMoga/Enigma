@@ -8,11 +8,11 @@ namespace ConsoleUI.Setups
     public class RotorsSetup : IUIComponent
     {
         public UIComponent[] UIComponents { get; }
-        public ScramblerBoard ScramblerBoard { get; }
+        public ScrambleBoard ScramblerBoard { get; }
         public RotatingService RotatingService { get; }
         public MemoryDataProvider DataProvider { get; }
 
-        public RotorsSetup(ScramblerBoard scramblerBoard, RotatingService rotatingService, MemoryDataProvider dataProvider)
+        public RotorsSetup(ScrambleBoard scramblerBoard, RotatingService rotatingService, MemoryDataProvider dataProvider)
         {
             ScramblerBoard = scramblerBoard;
             RotatingService = rotatingService;

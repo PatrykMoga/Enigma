@@ -4,12 +4,12 @@ using static System.Console;
 
 namespace ConsoleUI.Setups
 {
-    public class PlugBoardSetup : IUIComponent
+    public class PluginBoardSetup : IUIComponent
     {
         public UIComponent[] UIComponents { get; }
-        public PlugBoard PlugBoard { get; }
+        public PluginBoard PlugBoard { get; }
 
-        public PlugBoardSetup(PlugBoard plugBoard)
+        public PluginBoardSetup(PluginBoard plugBoard)
         {
             PlugBoard = plugBoard;
             UIComponents = new[]
