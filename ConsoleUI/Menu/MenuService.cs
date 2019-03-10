@@ -8,11 +8,25 @@ namespace ConsoleUI.Menu
     public class MenuService
     {
         private int _index = 1;
+        private IEnumerable<IMenuComponent> _menuComponents;
         public Dictionary<int, MenuItem> MenuItems { get; set; }
 
-        public MenuService()
+        public MenuService(IEnumerable<IMenuComponent> menuComponents)
         {
+            _menuComponents = menuComponents;
             MenuItems = new Dictionary<int, MenuItem>();
+            RegisterWithKey();
+        }
+
+        private void RegisterWithKey()
+        {
+            foreach (var components in _menuComponents)
+            {
+                foreach (var component in components.MenuItems)
+                {
+                    MenuItems.Add(_index++, component);
+                }
+            }
         }
 
         public void PrintMenu()
@@ -32,15 +46,7 @@ namespace ConsoleUI.Menu
             Clear();
         }
 
-        public void AddComponent(IMenuComponent component)
-        {
-            foreach (var menuItem in component.MenuItems)
-            {
-                MenuItems.Add(_index++, menuItem);
-            }
-        }
-
-        public void ExecuteComponent(string actionKey)
+        private void ExecuteComponent(string actionKey)
         {
             if (int.TryParse(actionKey, out int key))
             {

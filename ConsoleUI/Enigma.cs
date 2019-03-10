@@ -12,27 +12,21 @@ namespace ConsoleUI
         public UIService UIService { get; }
         public MenuService MenuService { get; }
 
-        public Enigma(DecodingProcessor processor, MenuService menuService, ReflectorSetup reflectorSetups,
-            PlugBoardSetup plugsSetups, RotorsSetup rotorsSetup, UIService uiService, ScramblerBoardUI scramblerBoardUI)
+        public Enigma(DecodingProcessor processor, MenuService menuService,
+            UIService uiService)
         {
             Procesor = processor;
             MenuService = menuService;
             UIService = uiService;
-
-            UIService.AddComponent(scramblerBoardUI);
-           
-
-            MenuService.AddComponent(reflectorSetups);
-            MenuService.AddComponent(plugsSetups);
-            MenuService.AddComponent(rotorsSetup);
-            
-            
         }
        
         public void Initialize()
         {
-            UIService.PrintComponents();
-            MenuService.PrintMenu();
+            while (true)
+            {
+                UIService.PrintComponents();
+                MenuService.PrintMenu();
+            }           
         }
     }
 }

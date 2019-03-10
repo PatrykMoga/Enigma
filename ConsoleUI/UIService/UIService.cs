@@ -6,26 +6,21 @@ namespace ConsoleUI.UIComponents
 {
     public class UIService
     {
-        public List<UIComponent> UIComponents { get; set; }
+        public IEnumerable<IUIComponent> UIComponents { get; set; }
 
-        public UIService()
+        public UIService(IEnumerable<IUIComponent> uiComponents)
         {
-            UIComponents = new List<UIComponent>();
+            UIComponents = uiComponents;
         }
 
         public void PrintComponents()
         {
-            foreach (var component in UIComponents)
+            foreach (var components in UIComponents)
             {
-                component.Action();
-            }
-        }
-
-        public void AddComponent(IUIComponent component)
-        {
-            foreach (var item in component.UIComponents)
-            {
-                UIComponents.Add(item);
+                foreach (var component in components.UIComponents)
+                {
+                    component.Action();
+                }
             }
         }
     }

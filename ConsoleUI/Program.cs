@@ -17,10 +17,12 @@ namespace ConsoleUI
                 builder.RegisterType<Enigma>();
                 builder.RegisterType<MenuService>();
                 builder.RegisterType<UIService>();
-                builder.RegisterType<ScramblerBoardUI>();
-                builder.RegisterType<ReflectorSetup>();
-                builder.RegisterType<PlugBoardSetup>();
-                builder.RegisterType<RotorsSetup>();
+                builder.RegisterType<ScramblerBoardUI>().As<IUIComponent>();
+                builder.RegisterType<PlugBoardUI>().As<IUIComponent>();
+                builder.RegisterType<DecodingProcessorUI>().As<IMenuComponent>();
+                builder.RegisterType<ReflectorSetup>().As<IMenuComponent>();
+                builder.RegisterType<PlugBoardSetup>().As<IMenuComponent>();
+                builder.RegisterType<RotorsSetup>().As<IMenuComponent>();
             }))
             {
                 var app = scope.Resolve<Enigma>();
