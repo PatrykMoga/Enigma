@@ -6,21 +6,21 @@ namespace ConsoleUI
 {
     public class ConsoleUI
     {
-        public DecodingProcessor Procesor { get; }
-        public UIService UIService { get; }
+        private readonly IDecodingProcessor _procesor;
+        private readonly IUIService _uiService;
 
-        public ConsoleUI(DecodingProcessor processor, UIService uiService)
+        public ConsoleUI(IDecodingProcessor processor, IUIService uiService)
         {
-            Procesor = processor;
-            UIService = uiService;
+            _procesor = processor;
+            _uiService = uiService;
         }
        
         public void Initialize()
         {
             while (true)
             {
-                UIService.PrintComponents();
-            }           
+                _uiService.PrintComponents();
+            }
         }
     }
 }

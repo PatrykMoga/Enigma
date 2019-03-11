@@ -22,6 +22,7 @@ namespace ConsoleUI.Setups
             _dataProvider = dataProvider;
             Component = new UIComponent("Set rotors", Set);
         }
+
         private void Set()
         {
             Clear();
@@ -37,7 +38,7 @@ namespace ConsoleUI.Setups
         {
             var rotors = $"Availble rotors: {string.Join(", ", names)}";
 
-            Extensions.PrintInLines(rotors);
+            rotors.PrintInLines();
             WriteLine();
             Write($"Set Rotor{number}: ");
 

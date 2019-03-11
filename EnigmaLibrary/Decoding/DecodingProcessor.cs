@@ -1,48 +1,48 @@
 ﻿namespace EnigmaLibrary
 {
-    public class DecodingProcessor
+    public class DecodingProcessor : IDecodingProcessor
     {
-        public ScrambleBoard ScramblerBoard { get; }
-        public IPluginBoard PlugBoardService { get; }
-        public IRotatingService RotatingService { get; }
-        public IDataProvider MemoryDataProvider { get; }
+        private readonly ScrambleBoard _scramblerBoard;
+        private readonly IPluginBoard _plugBoardService;
+        private readonly IRotatingService _rotatingService;
+        private readonly IDataProvider _dataProvider;
 
         public DecodingProcessor(ScrambleBoard scramblerBoard, IPluginBoard plugBoardService,
             IRotatingService rotatingService, IDataProvider memoryDataProvider)
         {
-            ScramblerBoard = scramblerBoard;
-            PlugBoardService = plugBoardService;
-            RotatingService = rotatingService;
-            MemoryDataProvider = memoryDataProvider;
+            _scramblerBoard = scramblerBoard;
+            _plugBoardService = plugBoardService;
+            _rotatingService = rotatingService;
+            _dataProvider = memoryDataProvider;
 
-            ScramblerBoard.Processor1.Rotor = MemoryDataProvider.GetRotor("I");
-            ScramblerBoard.Processor2.Rotor = MemoryDataProvider.GetRotor("II");
-            ScramblerBoard.Processor3.Rotor = MemoryDataProvider.GetRotor("III");
+            _scramblerBoard.Processor1.Rotor = _dataProvider.GetRotor("I");
+            _scramblerBoard.Processor2.Rotor = _dataProvider.GetRotor("II");
+            _scramblerBoard.Processor3.Rotor = _dataProvider.GetRotor("III");
 
-            ScramblerBoard.Reflector = MemoryDataProvider.GetReflector("UKW B");
+            _scramblerBoard.Reflector = _dataProvider.GetReflector("UKW B");
         }
 
         public string Decode(string message)
         {
             var strBuilder = new System.Text.StringBuilder();
-            message = PlugBoardService.SwapMessage(message);
+            message = _plugBoardService.SwapMessage(message);
 
             foreach (var ch in message)
             {
-                RotatingService.Rotate();
+                _rotatingService.Rotate();
 
-                char buffer = ScramblerBoard.Processor3.PassValue(ch);
-                buffer = ScramblerBoard.Processor2.PassValue(buffer);
-                buffer = ScramblerBoard.Processor1.PassValue(buffer);
+                char buffer = _scramblerBoard.Processor3.PassValue(ch);
+                buffer = _scramblerBoard.Processor2.PassValue(buffer);
+                buffer = _scramblerBoard.Processor1.PassValue(buffer);
 
-                buffer = ScramblerBoard.Reflector.ReflectValue(buffer);
+                buffer = _scramblerBoard.Reflector.ReflectValue(buffer);
 
-                buffer = ScramblerBoard.Processor1.ReceiveValue(buffer);
-                buffer = ScramblerBoard.Processor2.ReceiveValue(buffer);
-                buffer = ScramblerBoard.Processor3.ReceiveValue(buffer);
+                buffer = _scramblerBoard.Processor1.ReceiveValue(buffer);
+                buffer = _scramblerBoard.Processor2.ReceiveValue(buffer);
+                buffer = _scramblerBoard.Processor3.ReceiveValue(buffer);
 
                
-                strBuilder.Append(PlugBoardService.SwapChar(buffer));
+                strBuilder.Append(_plugBoardService.SwapChar(buffer));
             }
             return strBuilder.ToString();
         }

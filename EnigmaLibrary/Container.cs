@@ -7,9 +7,9 @@ namespace EnigmaLibrary
         public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<DecodingProcessor>();
+            builder.RegisterType<DecodingProcessor>().As<IDecodingProcessor>();
             builder.RegisterType<ScrambleBoard>().SingleInstance();
-            builder.RegisterType<RotorProcessor>().As<IRotorProcessor>();           
+            builder.RegisterType<RotorProcessor>().As<IRotorProcessor>();
             builder.RegisterType<Reflector>().As<IReflector>().SingleInstance();
             builder.RegisterType<RotatingService>().As<IRotatingService>().SingleInstance();
             builder.RegisterType<PluginBoard>().As<IPluginBoard>().SingleInstance();

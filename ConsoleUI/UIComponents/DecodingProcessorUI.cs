@@ -6,12 +6,12 @@ namespace ConsoleUI.UIComponents
 {
     public class DecodingProcessorUI : IUIComponent
     {
-        public DecodingProcessor DecodingProcessor { get; }
+        private readonly IDecodingProcessor _decodingProcessor;
         public UIComponent Component { get; }
 
-        public DecodingProcessorUI(DecodingProcessor decodingProcessor)
+        public DecodingProcessorUI(IDecodingProcessor decodingProcessor)
         {
-            DecodingProcessor = decodingProcessor;
+            _decodingProcessor = decodingProcessor;
             Component = new UIComponent("Decode message", StartDecoding);
         }
 
@@ -20,9 +20,9 @@ namespace ConsoleUI.UIComponents
             Console.Clear();
             Console.Write("Input message: ");
             var input = Console.ReadLine();
-            var output = $"Output message: {DecodingProcessor.Decode(input)}";
+            var output = $"Output message: {_decodingProcessor.Decode(input)}";
 
-            Extensions.PrintInLines(output);
+            output.PrintInLines();
             Console.ReadKey();
             Console.Clear();
         }

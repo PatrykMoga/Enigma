@@ -26,7 +26,7 @@ namespace ConsoleUI.UIComponents
             var bar = $"{reflector} | {rotor1} | {rotor2} | {rotor3}";
 
             Console.WriteLine("Scramble board: ");
-            Extensions.PrintInLines(bar);
+            bar.PrintInLines();
             Console.WriteLine();
         }
     }

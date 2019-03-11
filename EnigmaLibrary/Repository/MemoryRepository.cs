@@ -19,7 +19,6 @@ namespace EnigmaLibrary
                 new Rotor { Name = "III", TurnoverPosition = 21, Values = "BDFHJLCPRTXVZNYEIWGAKMUSQO" },
                 new Rotor { Name = "IV", TurnoverPosition = 21, Values = "ESOVPZJAYQUIRHXLNFTGKDCMWB" },
                 new Rotor { Name = "V", TurnoverPosition = 21, Values = "VZBRGITYUPSDNHLXAWMJQOFECK" }
-
             };
 
             Reflectors = new List<IReflector>()

@@ -40,7 +40,7 @@ namespace ConsoleUI.UIComponents
             }
 
             Console.WriteLine("Plugins connections:");
-            Extensions.PrintInLines(sb.ToString(),25);
+            sb.ToString().PrintInLines(25);
             Console.WriteLine();
         }
     }

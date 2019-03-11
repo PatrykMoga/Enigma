@@ -12,12 +12,10 @@ namespace Tests
             var container = Container.Configure();
             using (var scope = container.BeginLifetimeScope())
             {
-                var app = scope.Resolve<DecodingProcessor>();
+                var app = scope.Resolve<IDecodingProcessor>();
                 var result = app.Decode("barbara");
                 Assert.That(result, Is.EqualTo("ADXCOTC"));
-            }
-            
-            
+            }                       
         }
     }
 }

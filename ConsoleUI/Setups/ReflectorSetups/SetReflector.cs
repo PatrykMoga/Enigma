@@ -24,7 +24,7 @@ namespace ConsoleUI.Setups
             var reflectors = _dataProvider.GetReflectorsNames();
             var reflector = $"Availble reflectors: {string.Join(", ", reflectors)}";
 
-            Extensions.PrintInLines(reflector);
+            reflector.PrintInLines();
             WriteLine();
             Write($"Set reflector: ");
 
