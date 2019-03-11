@@ -2,6 +2,6 @@
 {
     public interface IUIService
     {
-        void PrintComponents();
+        void Run();
     }
 }

@@ -33,7 +33,7 @@ namespace ConsoleUI.UIServiceComponents
             }
         }
 
-        public void PrintComponents()
+        public void Run()
         {
             foreach (var item in _actions)
             {

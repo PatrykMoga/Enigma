@@ -18,7 +18,7 @@ namespace ConsoleUI
         {
             while (true)
             {
-                _uiService.PrintComponents();
+                _uiService.Run();
             }
         }
     }
