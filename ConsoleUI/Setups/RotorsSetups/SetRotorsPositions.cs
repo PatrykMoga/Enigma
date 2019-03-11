@@ -11,13 +11,11 @@ namespace ConsoleUI.Setups
     public class SetRotorsPositions : IUIComponent
     {
         private readonly ScrambleBoard _scramblerBoard;
-
         public UIComponent Component { get; }
 
         public SetRotorsPositions(ScrambleBoard scramblerBoard)
         {
-            _scramblerBoard = scramblerBoard;   
-
+            _scramblerBoard = scramblerBoard;
             Component = new UIComponent("Set rotors positions", SetPositions);
         }
 

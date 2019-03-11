@@ -8,10 +8,10 @@ namespace ConsoleUI.UIComponents
 {
     public class PluginBoardUI : IUIComponent
     {
-        public PluginBoard PlugBoard { get; }
+        public IPluginBoard PlugBoard { get; }
         public UIComponent Component { get; }
 
-        public PluginBoardUI(PluginBoard plugBoard)
+        public PluginBoardUI(IPluginBoard plugBoard)
         {
             PlugBoard = plugBoard;
             Component = new UIComponent(Show);          

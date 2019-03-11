@@ -10,10 +10,10 @@ namespace ConsoleUI.Setups
 {
     public class AddPluginConnection : IUIComponent
     {
-        private readonly PluginBoard _pluginBoard;
+        private readonly IPluginBoard _pluginBoard;
         public UIComponent Component { get; }
 
-        public AddPluginConnection(PluginBoard pluginBoard)
+        public AddPluginConnection(IPluginBoard pluginBoard)
         {
             _pluginBoard = pluginBoard;
             Component = new UIComponent("Add plugin connection", SetConnection);

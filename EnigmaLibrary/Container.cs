@@ -11,9 +11,9 @@ namespace EnigmaLibrary
             builder.RegisterType<ScrambleBoard>().SingleInstance();
             builder.RegisterType<RotorProcessor>().As<IRotorProcessor>();           
             builder.RegisterType<Reflector>().As<IReflector>().SingleInstance();
-            builder.RegisterType<RotatingService>().SingleInstance();
-            builder.RegisterType<PluginBoard>().SingleInstance();
-            builder.RegisterType<MemoryDataProvider>().SingleInstance();
+            builder.RegisterType<RotatingService>().As<IRotatingService>().SingleInstance();
+            builder.RegisterType<PluginBoard>().As<IPluginBoard>().SingleInstance();
+            builder.RegisterType<MemoryDataProvider>().As<IDataProvider>().SingleInstance();
             builder.RegisterType<MemoryRepository>().As<IMemoryRepository>();
             return builder.Build();
         }

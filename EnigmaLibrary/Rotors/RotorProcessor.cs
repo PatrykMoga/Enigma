@@ -21,11 +21,10 @@ namespace EnigmaLibrary
         {
             var buff = i + Rotor.Position;
             if (buff > 90) buff -= 26;
-
-            var b = Rotor.Values.IndexOf((char)buff);
-            var a = (b + 65 - Rotor.Position);
-            if (a < 65) a += 26;
-            return (char)a;
+            buff = Rotor.Values.IndexOf((char)buff);
+            buff = (buff + 65 - Rotor.Position);
+            if (buff < 65) buff += 26;
+            return (char)buff;
         }
     }
 }

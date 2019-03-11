@@ -9,14 +9,12 @@ namespace ConsoleUI.Setups
 {
     public class ResetPluginsConnection : IUIComponent
     {
-        private PluginBoard _pluginBoard;
-
+        private readonly IPluginBoard _pluginBoard;
         public UIComponent Component { get; }
 
-        public ResetPluginsConnection(PluginBoard pluginBoard)
+        public ResetPluginsConnection(IPluginBoard pluginBoard)
         {
             _pluginBoard = pluginBoard;
-
             Component = new UIComponent("Reset plugins connection", ResetConnection);            
         }
 

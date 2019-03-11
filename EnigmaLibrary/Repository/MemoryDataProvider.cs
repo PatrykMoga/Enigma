@@ -6,22 +6,22 @@ using System.Text;
 
 namespace EnigmaLibrary
 {
-    public class MemoryDataProvider /*: IDataProvider*/
+    public class MemoryDataProvider : IDataProvider
     {
-        public IMemoryRepository Repository { get; }
+        private readonly IMemoryRepository _repository;
 
         public MemoryDataProvider(IMemoryRepository repository)
         {
-            Repository = repository;
+            _repository = repository;
         }
 
-        public Rotor GetRotor(string name) => Repository.Rotors.First(r => r.Name == name);
+        public Rotor GetRotor(string name) => _repository.Rotors.First(r => r.Name == name);
 
-        public IReflector GetReflector(string name) => Repository.Reflectors.First(r => r.Name == name);
+        public IReflector GetReflector(string name) => _repository.Reflectors.First(r => r.Name == name);
 
 
-        public List<string> GetRotorsNames() => Repository.Rotors.Select(n => n.Name).ToList();
+        public IList<string> GetRotorsNames() => _repository.Rotors.Select(n => n.Name).ToList();
 
-        public List<string> GetReflectorsNames() => Repository.Reflectors.Select(n => n.Name).ToList();
+        public IList<string> GetReflectorsNames() => _repository.Reflectors.Select(n => n.Name).ToList();
     }
 }
