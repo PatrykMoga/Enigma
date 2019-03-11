@@ -1,10 +1,7 @@
-﻿using ConsoleUI.UIComponents;
+﻿using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
-using System;
-using static System.Console;
 using System.Collections.Generic;
-using System.Text;
-using ConsoleUI.UIServiceComponents;
+using static System.Console;
 
 namespace ConsoleUI.Setups
 {

@@ -1,5 +1,4 @@
-﻿using ConsoleUI.UIComponents;
-using ConsoleUI.UIServiceComponents;
+﻿using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
 using static System.Console;
 

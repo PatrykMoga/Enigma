@@ -1,9 +1,4 @@
-﻿using ConsoleUI.UIComponents;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleUI.UIServiceComponents
+﻿namespace ConsoleUI.UIServiceComponents
 {
     public interface IUIComponent
     {

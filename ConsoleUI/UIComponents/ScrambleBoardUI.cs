@@ -1,8 +1,6 @@
 ﻿using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleUI.UIComponents
 {

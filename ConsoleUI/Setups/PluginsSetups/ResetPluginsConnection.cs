@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ConsoleUI.UIComponents;
-using ConsoleUI.UIServiceComponents;
+﻿using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
 
 namespace ConsoleUI.Setups

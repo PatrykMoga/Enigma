@@ -1,8 +1,5 @@
-﻿using ConsoleUI.UIComponents;
-using ConsoleUI.UIServiceComponents;
+﻿using ConsoleUI.UIServiceComponents;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleUI.Setups
 {
