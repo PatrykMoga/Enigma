@@ -8,7 +8,7 @@ namespace EnigmaLibrary
     public class MemoryRepository
     {
         public List<DictionaryRotor> Rotors { get; }
-        public List<IReflector> Reflectors { get; }
+        public List<DictionaryReflector> Reflectors { get; }
 
         public MemoryRepository()
         {
@@ -113,7 +113,7 @@ namespace EnigmaLibrary
 
             };
 
-            Reflectors = new List<IReflector>()
+            Reflectors = new List<DictionaryReflector>()
             {
                 new DictionaryReflector{ Name = "UKW B", Values = new Dictionary<byte, byte>
                 {

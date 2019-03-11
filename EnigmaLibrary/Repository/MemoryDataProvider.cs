@@ -17,7 +17,7 @@ namespace EnigmaLibrary
 
         public DictionaryRotor GetRotor(string name) => Repository.Rotors.First(r => r.Name == name);
 
-        public IReflector GetReflector(string name) => Repository.Reflectors.First(r => r.Name == name);
+        public DictionaryReflector GetReflector(string name) => Repository.Reflectors.First(r => r.Name == name);
 
 
         public List<string> GetRotorsNames() => Repository.Rotors.Select(n => n.Name).ToList();

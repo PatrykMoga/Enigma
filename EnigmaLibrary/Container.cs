@@ -10,9 +10,9 @@ namespace EnigmaLibrary
             builder.RegisterType<DecodingProcessor>();
             builder.RegisterType<ScrambleBoard>().SingleInstance();
             builder.RegisterType<DictionaryRotorProcessor>();
-            builder.RegisterType<DictionaryReflector>().As<IReflector>().SingleInstance();
+            builder.RegisterType<DictionaryReflector>().SingleInstance();
             builder.RegisterType<RotatingService>().SingleInstance();
-            builder.RegisterType<PluginBoard>().As<IPluginBoard>().SingleInstance();
+            builder.RegisterType<PluginBoard>().SingleInstance();
             builder.RegisterType<MemoryDataProvider>().SingleInstance();
             builder.RegisterType<MemoryRepository>();
             return builder.Build();

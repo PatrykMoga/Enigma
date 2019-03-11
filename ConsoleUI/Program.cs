@@ -14,7 +14,7 @@ namespace ConsoleUI
             using (var scope = container.BeginLifetimeScope(builder =>
             {
                 builder.RegisterType<ConsoleUI>();
-                builder.RegisterType<UIService>().As<IUIService>();
+                builder.RegisterType<UIService>();
                 builder.RegisterType<ScrambleBoardUI>().As<IUIComponent>();
                 builder.RegisterType<PluginBoardUI>().As<IUIComponent>();
                 builder.RegisterType<DecodingProcessorUI>().As<IUIComponent>();

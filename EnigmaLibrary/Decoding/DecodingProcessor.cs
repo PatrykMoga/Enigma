@@ -3,11 +3,11 @@
     public class DecodingProcessor
     {
         public ScrambleBoard ScramblerBoard { get; }
-        public IPluginBoard PlugBoardService { get; }
+        public PluginBoard PlugBoardService { get; }
         public RotatingService RotatingService { get; }
         public MemoryDataProvider MemoryDataProvider { get; }
 
-        public DecodingProcessor(ScrambleBoard scramblerBoard, IPluginBoard plugBoardService,
+        public DecodingProcessor(ScrambleBoard scramblerBoard, PluginBoard plugBoardService,
             RotatingService rotatingService, MemoryDataProvider memoryDataProvider)
         {
             ScramblerBoard = scramblerBoard;

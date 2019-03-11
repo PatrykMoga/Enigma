@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EnigmaLibrary
 {
-    public class PluginBoard : IPluginBoard
+    public class PluginBoard
     {
         public Dictionary<char, char> Plugins { get; set; }
 
