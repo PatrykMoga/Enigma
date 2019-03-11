@@ -14,7 +14,7 @@ namespace ConsoleUI.Setups
         private readonly RotatingService _rotatingService;
         private readonly MemoryDataProvider _dataProvider;
 
-        public UIComponent Component { get; }       
+        public UIComponent Component { get; }
 
         public SetRotors(ScrambleBoard scramblerBoard, RotatingService rotatingService, MemoryDataProvider dataProvider)
         {
@@ -22,7 +22,7 @@ namespace ConsoleUI.Setups
             _rotatingService = rotatingService;
             _dataProvider = dataProvider;
 
-            Component = new UIComponent("Set rotors", Set);          
+            Component = new UIComponent("Set rotors", Set);
         }
         private void Set()
         {
@@ -35,7 +35,7 @@ namespace ConsoleUI.Setups
             Clear();
         }
 
-        private DictionaryRotor SetRotor(List<string> names, int number)
+        private Rotor SetRotor(List<string> names, int number)
         {
             var rotors = $"Availble rotors: {string.Join(", ", names)}";
 

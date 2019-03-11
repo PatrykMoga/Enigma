@@ -11,9 +11,9 @@ namespace ConsoleUI.Setups
         private MemoryDataProvider _dataProvider;
 
         public UIComponent Component { get; }
-       
+
         public SetReflector(ScrambleBoard board, MemoryDataProvider dataProvider)
-        {          
+        {
             _board = board;
             _dataProvider = dataProvider;
 

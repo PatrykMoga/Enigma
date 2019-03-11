@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace EnigmaLibrary
+﻿namespace EnigmaLibrary
 {
-    public class DictionaryRotor
+    public class Rotor
     {
         public string Name { get; set; }
-        public Dictionary<byte, byte> Values { get; set; }
+        public string Values { get; set; }
         public byte Position { get; set; } = 0;
         public byte TurnoverPosition { get; set; }
     }

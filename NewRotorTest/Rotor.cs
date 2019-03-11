@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnigmaLibrary.Rotors
+namespace NewRotorTest
 {
     public class Rotor
     {

@@ -4,6 +4,6 @@
     {
         string Name { get; set; }
 
-        byte ReflectValue(byte n);
+        char ReflectValue(char c);
     }
 }
