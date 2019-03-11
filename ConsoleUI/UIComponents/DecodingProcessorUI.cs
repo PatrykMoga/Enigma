@@ -3,18 +3,15 @@ using System;
 
 namespace ConsoleUI.UIComponents
 {
-    public class DecodingProcessorUI : IUIComponent
+    public class DecodingProcessorUI : BetterIUIComponent
     {
         public DecodingProcessor DecodingProcessor { get; }
-        public UIComponent[] UIComponents { get; }
+        public UIComponent Component { get; }
 
         public DecodingProcessorUI(DecodingProcessor decodingProcessor)
         {
             DecodingProcessor = decodingProcessor;
-            UIComponents = new[]
-            {
-                new UIComponent("Decode message",StartDecoding)
-            };
+            Component = new UIComponent("Decode message", StartDecoding);
         }
 
         private void StartDecoding()

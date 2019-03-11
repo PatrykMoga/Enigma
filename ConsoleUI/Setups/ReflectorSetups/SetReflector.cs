@@ -4,26 +4,23 @@ using static System.Console;
 
 namespace ConsoleUI.Setups
 {
-    public class ReflectorSetup : IUIComponent
+    public class SetReflector : BetterIUIComponent
     {
-        public UIComponent[] UIComponents { get; }
-        public ScrambleBoard Board { get; set; }
-        public MemoryDataProvider DataProvider { get; }
+        public UIComponent Component { get; }
+        private ScrambleBoard _board;
+        private MemoryDataProvider _dataProvider;
 
-
-        public ReflectorSetup(ScrambleBoard board, MemoryDataProvider dataProvider) 
+        public SetReflector(ScrambleBoard board, MemoryDataProvider dataProvider)
         {
-            Board = board;
-            DataProvider = dataProvider;
-            UIComponents = new[]
-            {
-                new UIComponent("Setup reflector",SetupReflector),
-            };
+            Component = new UIComponent("Set reflector", Set);
+            _board = board;
+            _dataProvider = dataProvider;
         }
-      
-        private void SetupReflector()
+
+        private void Set()
         {
-            var reflectors = DataProvider.GetReflectorsNames();
+            Clear();
+            var reflectors = _dataProvider.GetReflectorsNames();
             var reflector = $"Availble reflectors: {string.Join(", ", reflectors)}";
 
             Extensions.PrintInLines(reflector);
@@ -35,7 +32,7 @@ namespace ConsoleUI.Setups
                 var input = ReadLine();
                 if (reflectors.Contains(input))
                 {
-                    Board.Reflector = DataProvider.GetReflector(input);
+                    _board.Reflector = _dataProvider.GetReflector(input);
                     break;
                 }
                 else

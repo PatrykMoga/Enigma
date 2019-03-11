@@ -6,8 +6,13 @@ namespace EnigmaLibrary
 {
     public class PluginBoard
     {
-        public Dictionary<char, char> Plugs { get; set; } = new Dictionary<char, char>(); //TEMP
-        
+        public Dictionary<char, char> Plugins { get; set; }
+
+        public PluginBoard()
+        {
+            Plugins = new Dictionary<char, char>();
+        }
+
         public string SwapMessage(string message)
         {
             var sb = new StringBuilder();
@@ -20,15 +25,15 @@ namespace EnigmaLibrary
 
         public char SwapChar(char ch)
         {
-            foreach (var plug in Plugs)
+            foreach (var plugin in Plugins)
             {
-                if (plug.Key == ch)
+                if (plugin.Key == ch)
                 {
-                    return plug.Value;
+                    return plugin.Value;
                 }
-                if (plug.Value == ch)
+                if (plugin.Value == ch)
                 {
-                    return plug.Key;
+                    return plugin.Key;
                 }
             }
             return ch;

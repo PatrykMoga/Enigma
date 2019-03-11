@@ -5,19 +5,15 @@ using System.Text;
 
 namespace ConsoleUI.UIComponents
 {
-    public class ScrambleBoardUI : IUIComponent
+    public class ScrambleBoardUI : BetterIUIComponent
     {
-        public UIComponent[] UIComponents { get; }
+        public UIComponent Component { get; }
         public ScrambleBoard ScrambleBoard { get; }
 
         public ScrambleBoardUI(ScrambleBoard scramblerBoard)
         {
             ScrambleBoard = scramblerBoard;
-
-            UIComponents = new[]
-            {
-                 new UIComponent(Show)
-            };
+            Component = new UIComponent(Show);            
         }
 
         private void Show()

@@ -9,11 +9,11 @@ namespace ConsoleUI.UIComponents
     public class UIService
     {
         private int _index = 1;
-        private IEnumerable<IUIComponent> _uiComponents;
+        private IEnumerable<BetterIUIComponent> _uiComponents;
         private Dictionary<int, UIComponent> _executable;
         private List<UIComponent> _actions;
 
-        public UIService(IEnumerable<IUIComponent> uiComponents)
+        public UIService(IEnumerable<BetterIUIComponent> uiComponents)
         {
             _uiComponents = uiComponents;
             _executable = new Dictionary<int, UIComponent>();
@@ -23,18 +23,15 @@ namespace ConsoleUI.UIComponents
 
         private void LoadComponents()
         {
-            foreach (var components in _uiComponents)
+            foreach (var component in _uiComponents)
             {
-                foreach (var component in components.UIComponents)
+                if (!component.Component.Executable)
                 {
-                    if (!component.Executable)
-                    {
-                        _actions.Add(component);
-                    }
-                    if (component.Executable)
-                    {
-                        _executable.Add(_index++, component);
-                    }
+                    _actions.Add(component.Component);
+                }
+                if (component.Component.Executable)
+                {
+                    _executable.Add(_index++, component.Component);
                 }
             }
         }

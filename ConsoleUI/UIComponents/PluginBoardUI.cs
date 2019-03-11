@@ -5,27 +5,24 @@ using System.Text;
 
 namespace ConsoleUI.UIComponents
 {
-    public class PluginBoardUI : IUIComponent
+    public class PluginBoardUI : BetterIUIComponent
     {
         public PluginBoard PlugBoard { get; }
-        public UIComponent[] UIComponents { get; }
+        public UIComponent Component { get; }
 
         public PluginBoardUI(PluginBoard plugBoard)
         {
             PlugBoard = plugBoard;
-            UIComponents = new[]
-            {
-                new UIComponent(Show)
-            };
+            Component = new UIComponent(Show);          
         }
 
         private void Show()
         {
             int count = 1;
             var sb = new StringBuilder();
-            if (PlugBoard.Plugs.Count > 0)
+            if (PlugBoard.Plugins.Count > 0)
             {
-                foreach (var plug in PlugBoard.Plugs)
+                foreach (var plug in PlugBoard.Plugins)
                 {
                     if (count > 5)
                     {
