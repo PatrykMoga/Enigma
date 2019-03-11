@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace EnigmaLibrary
 {
-    public class DictionaryReflector
+    public class DictionaryReflector : IReflector
     {
         public string Name { get; set; }
         public Dictionary<byte, byte> Values { get; set; }
