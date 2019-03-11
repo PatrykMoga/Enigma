@@ -1,15 +1,16 @@
 ﻿using ConsoleUI.UIComponents;
+using ConsoleUI.UIServiceComponents;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleUI.Setups
 {
-    public class Exit : BetterIUIComponent
+    public class ExitCommand : IUIComponent
     {
         public UIComponent Component { get; }
 
-        public Exit()
+        public ExitCommand()
         {
             Component = new UIComponent("Exit", ExitProgram);
         }

@@ -1,10 +1,11 @@
 ﻿using ConsoleUI.UIComponents;
+using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
 using static System.Console;
 
 namespace ConsoleUI.Setups
 {
-    public class SetReflector : BetterIUIComponent
+    public class SetReflector : IUIComponent
     {
         public UIComponent Component { get; }
         private ScrambleBoard _board;

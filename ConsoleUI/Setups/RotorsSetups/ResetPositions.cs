@@ -1,9 +1,10 @@
 ﻿using ConsoleUI.UIComponents;
+using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
 
 namespace ConsoleUI.Setups
 {
-    public class ResetPositions : BetterIUIComponent
+    public class ResetPositions : IUIComponent
     {
         public UIComponent Component { get; }
         private RotatingService _rotatingService;

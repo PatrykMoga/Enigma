@@ -4,10 +4,11 @@ using System;
 using static System.Console;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleUI.UIServiceComponents;
 
 namespace ConsoleUI.Setups
 {
-    class AddConnection : BetterIUIComponent
+    class AddConnection : IUIComponent
     {
         private PluginBoard _pluginBoard;
         public UIComponent Component { get; }

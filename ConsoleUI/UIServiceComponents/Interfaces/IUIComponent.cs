@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleUI
+namespace ConsoleUI.UIServiceComponents
 {
-    public interface BetterIUIComponent
+    public interface IUIComponent
     {
         UIComponent Component { get; }
     }

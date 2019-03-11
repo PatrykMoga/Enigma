@@ -1,11 +1,12 @@
-﻿using EnigmaLibrary;
+﻿using ConsoleUI.UIServiceComponents;
+using EnigmaLibrary;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleUI.UIComponents
 {
-    public class PluginBoardUI : BetterIUIComponent
+    public class PluginBoardUI : IUIComponent
     {
         public PluginBoard PlugBoard { get; }
         public UIComponent Component { get; }

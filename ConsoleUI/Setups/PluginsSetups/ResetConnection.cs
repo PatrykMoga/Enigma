@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using ConsoleUI.UIComponents;
+using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
 
 namespace ConsoleUI.Setups
 {
-    public class ResetConnection : BetterIUIComponent
+    public class ResetConnection : IUIComponent
     {
         private PluginBoard _pluginBoard;
         public UIComponent Component { get; }

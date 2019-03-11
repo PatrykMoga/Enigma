@@ -1,9 +1,10 @@
-﻿using EnigmaLibrary;
+﻿using ConsoleUI.UIServiceComponents;
+using EnigmaLibrary;
 using System;
 
 namespace ConsoleUI.UIComponents
 {
-    public class DecodingProcessorUI : BetterIUIComponent
+    public class DecodingProcessorUI : IUIComponent
     {
         public DecodingProcessor DecodingProcessor { get; }
         public UIComponent Component { get; }

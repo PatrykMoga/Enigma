@@ -4,10 +4,11 @@ using System;
 using static System.Console;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleUI.UIServiceComponents;
 
 namespace ConsoleUI.Setups
 {
-    public class SetRotors : BetterIUIComponent
+    public class SetRotors : IUIComponent
     {
         public UIComponent Component { get; }
         private ScrambleBoard _scramblerBoard;
@@ -19,9 +20,9 @@ namespace ConsoleUI.Setups
             _scramblerBoard = scramblerBoard;
             _rotatingService = rotatingService;
             _dataProvider = dataProvider;
-            Component = new UIComponent("Setup rotors", SetupRotors);          
+            Component = new UIComponent("Set rotors", Set);          
         }
-        private void SetupRotors()
+        private void Set()
         {
             Clear();
             var names = _dataProvider.GetRotorsNames();

@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using ConsoleUI.Setups;
 using ConsoleUI.UIComponents;
+using ConsoleUI.UIServiceComponents;
 using EnigmaLibrary;
 
 namespace ConsoleUI
@@ -13,20 +14,20 @@ namespace ConsoleUI
             using (var scope = container.BeginLifetimeScope(builder =>
             {
                 builder.RegisterType<ConsoleUI>();
-                builder.RegisterType<UIService>();
-                builder.RegisterType<ScrambleBoardUI>().As<BetterIUIComponent>();
-                builder.RegisterType<PluginBoardUI>().As<BetterIUIComponent>();
-                builder.RegisterType<DecodingProcessorUI>().As<BetterIUIComponent>();
+                builder.RegisterType<UIService>().As<IUIService>();
+                builder.RegisterType<ScrambleBoardUI>().As<IUIComponent>();
+                builder.RegisterType<PluginBoardUI>().As<IUIComponent>();
+                builder.RegisterType<DecodingProcessorUI>().As<IUIComponent>();
                 //builder.RegisterType<ReflectorSetups>().As<IUIComponent>();
                 //builder.RegisterType<PluginBoardSetups>().As<IUIComponent>();
                 //builder.RegisterType<RotorsSetups>().As<IUIComponent>();
-                builder.RegisterType<AddConnection>().As<BetterIUIComponent>();
-                builder.RegisterType<ResetConnection>().As<BetterIUIComponent>();
-                builder.RegisterType<SetReflector>().As<BetterIUIComponent>();
-                builder.RegisterType<SetRotors>().As<BetterIUIComponent>();
-                builder.RegisterType<SetPositions>().As<BetterIUIComponent>();
-                builder.RegisterType<ResetPositions>().As<BetterIUIComponent>();
-                builder.RegisterType<Exit>().As<BetterIUIComponent>();
+                builder.RegisterType<AddConnection>().As<IUIComponent>();
+                builder.RegisterType<ResetConnection>().As<IUIComponent>();
+                builder.RegisterType<SetReflector>().As<IUIComponent>();
+                builder.RegisterType<SetRotors>().As<IUIComponent>();
+                builder.RegisterType<SetPositions>().As<IUIComponent>();
+                builder.RegisterType<ResetPositions>().As<IUIComponent>();
+                builder.RegisterType<ExitCommand>().As<IUIComponent>();
             }))
             {
                 var app = scope.Resolve<ConsoleUI>();

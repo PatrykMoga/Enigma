@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleUI.UIComponents
+namespace ConsoleUI.UIServiceComponents
 {
     public class UIComponent
     {

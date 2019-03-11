@@ -1,11 +1,12 @@
-﻿using EnigmaLibrary;
+﻿using ConsoleUI.UIServiceComponents;
+using EnigmaLibrary;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleUI.UIComponents
 {
-    public class ScrambleBoardUI : BetterIUIComponent
+    public class ScrambleBoardUI : IUIComponent
     {
         public UIComponent Component { get; }
         public ScrambleBoard ScrambleBoard { get; }

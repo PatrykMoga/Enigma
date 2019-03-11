@@ -4,16 +4,16 @@ using System.Text;
 using System.Linq;
 using static System.Console;
 
-namespace ConsoleUI.UIComponents
+namespace ConsoleUI.UIServiceComponents
 {
-    public class UIService
+    public class UIService : IUIService
     {
         private int _index = 1;
-        private IEnumerable<BetterIUIComponent> _uiComponents;
+        private IEnumerable<IUIComponent> _uiComponents;
         private Dictionary<int, UIComponent> _executable;
         private List<UIComponent> _actions;
 
-        public UIService(IEnumerable<BetterIUIComponent> uiComponents)
+        public UIService(IEnumerable<IUIComponent> uiComponents)
         {
             _uiComponents = uiComponents;
             _executable = new Dictionary<int, UIComponent>();
