@@ -7,15 +7,17 @@ namespace ConsoleUI.Setups
 {
     public class SetReflector : IUIComponent
     {
-        public UIComponent Component { get; }
         private ScrambleBoard _board;
         private MemoryDataProvider _dataProvider;
 
+        public UIComponent Component { get; }
+       
         public SetReflector(ScrambleBoard board, MemoryDataProvider dataProvider)
-        {
-            Component = new UIComponent("Set reflector", Set);
+        {          
             _board = board;
             _dataProvider = dataProvider;
+
+            Component = new UIComponent("Set reflector", Set);
         }
 
         private void Set()

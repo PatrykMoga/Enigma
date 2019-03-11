@@ -18,15 +18,12 @@ namespace ConsoleUI
                 builder.RegisterType<ScrambleBoardUI>().As<IUIComponent>();
                 builder.RegisterType<PluginBoardUI>().As<IUIComponent>();
                 builder.RegisterType<DecodingProcessorUI>().As<IUIComponent>();
-                //builder.RegisterType<ReflectorSetups>().As<IUIComponent>();
-                //builder.RegisterType<PluginBoardSetups>().As<IUIComponent>();
-                //builder.RegisterType<RotorsSetups>().As<IUIComponent>();
-                builder.RegisterType<AddConnection>().As<IUIComponent>();
-                builder.RegisterType<ResetConnection>().As<IUIComponent>();
-                builder.RegisterType<SetReflector>().As<IUIComponent>();
                 builder.RegisterType<SetRotors>().As<IUIComponent>();
-                builder.RegisterType<SetPositions>().As<IUIComponent>();
-                builder.RegisterType<ResetPositions>().As<IUIComponent>();
+                builder.RegisterType<SetRotorsPositions>().As<IUIComponent>();
+                builder.RegisterType<ResetRotorsPositions>().As<IUIComponent>();
+                builder.RegisterType<SetReflector>().As<IUIComponent>();
+                builder.RegisterType<AddPluginConnection>().As<IUIComponent>();
+                builder.RegisterType<ResetPluginsConnection>().As<IUIComponent>();              
                 builder.RegisterType<ExitCommand>().As<IUIComponent>();
             }))
             {

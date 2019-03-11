@@ -7,17 +7,19 @@ using EnigmaLibrary;
 
 namespace ConsoleUI.Setups
 {
-    public class ResetConnection : IUIComponent
+    public class ResetPluginsConnection : IUIComponent
     {
         private PluginBoard _pluginBoard;
+
         public UIComponent Component { get; }
 
-        public ResetConnection(PluginBoard pluginBoard)
+        public ResetPluginsConnection(PluginBoard pluginBoard)
         {
             _pluginBoard = pluginBoard;
-            Component = new UIComponent("Reset plugins connection", Reset);            
+
+            Component = new UIComponent("Reset plugins connection", ResetConnection);            
         }
 
-        private void Reset() => _pluginBoard.Plugins.Clear();
+        private void ResetConnection() => _pluginBoard.Plugins.Clear();
     }
 }

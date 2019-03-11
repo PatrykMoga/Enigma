@@ -10,16 +10,18 @@ namespace ConsoleUI.Setups
 {
     public class SetRotors : IUIComponent
     {
-        public UIComponent Component { get; }
-        private ScrambleBoard _scramblerBoard;
-        private RotatingService _rotatingService;
-        private MemoryDataProvider _dataProvider;
+        private readonly ScrambleBoard _scramblerBoard;
+        private readonly RotatingService _rotatingService;
+        private readonly MemoryDataProvider _dataProvider;
+
+        public UIComponent Component { get; }       
 
         public SetRotors(ScrambleBoard scramblerBoard, RotatingService rotatingService, MemoryDataProvider dataProvider)
         {
             _scramblerBoard = scramblerBoard;
             _rotatingService = rotatingService;
             _dataProvider = dataProvider;
+
             Component = new UIComponent("Set rotors", Set);          
         }
         private void Set()

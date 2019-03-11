@@ -148,6 +148,6 @@ namespace EnigmaLibrary
                     {18,20}
                 }}
             };
-        }        
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-namespace EnigmaLibrary
+﻿namespace EnigmaLibrary
 {
     public class DecodingProcessor
     {

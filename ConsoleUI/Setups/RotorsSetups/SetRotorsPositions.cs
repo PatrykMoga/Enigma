@@ -8,18 +8,20 @@ using static System.Console;
 
 namespace ConsoleUI.Setups
 {
-    public class SetPositions : IUIComponent
+    public class SetRotorsPositions : IUIComponent
     {
-        public UIComponent Component { get; }
-        private ScrambleBoard _scramblerBoard;
+        private readonly ScrambleBoard _scramblerBoard;
 
-        public SetPositions(ScrambleBoard scramblerBoard)
+        public UIComponent Component { get; }
+
+        public SetRotorsPositions(ScrambleBoard scramblerBoard)
         {
-            _scramblerBoard = scramblerBoard;            
-            Component = new UIComponent("Set rotors positions", Set);
+            _scramblerBoard = scramblerBoard;   
+
+            Component = new UIComponent("Set rotors positions", SetPositions);
         }
 
-        private void Set()
+        private void SetPositions()
         {
             Write($"Set position of Rotor1: ");
             _scramblerBoard.Processor1.Rotor.Position = SetPosition();
