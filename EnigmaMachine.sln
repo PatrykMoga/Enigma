@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnigmaLibrary", "EnigmaLibrary\EnigmaLibrary.csproj", "{23E0C00D-5F2B-4C9F-ACED-003F6CC43DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnigmaLibrary", "EnigmaLibrary\EnigmaLibrary.csproj", "{23E0C00D-5F2B-4C9F-ACED-003F6CC43DCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{ADEB7494-AB5D-4CD1-BC31-8A64687DBAD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{ADEB7494-AB5D-4CD1-BC31-8A64687DBAD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnigmaLibrary.Tests", "EnigmaLibrary.Tests\EnigmaLibrary.Tests.csproj", "{7844F54F-DA89-4D87-B401-9C6F99F75917}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{ADEB7494-AB5D-4CD1-BC31-8A64687DBAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADEB7494-AB5D-4CD1-BC31-8A64687DBAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADEB7494-AB5D-4CD1-BC31-8A64687DBAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7844F54F-DA89-4D87-B401-9C6F99F75917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7844F54F-DA89-4D87-B401-9C6F99F75917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7844F54F-DA89-4D87-B401-9C6F99F75917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7844F54F-DA89-4D87-B401-9C6F99F75917}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
