@@ -17,7 +17,6 @@ namespace EnigmaLibrary.Repository
 
         public IReflector GetReflector(string name) => _repository.Reflectors.First(r => r.Name == name);
 
-
         public IList<string> GetRotorsNames() => _repository.Rotors.Select(n => n.Name).ToList();
 
         public IList<string> GetReflectorsNames() => _repository.Reflectors.Select(n => n.Name).ToList();
