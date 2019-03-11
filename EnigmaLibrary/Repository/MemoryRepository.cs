@@ -1,9 +1,7 @@
-﻿
-using System;
+﻿using EnigmaLibrary.Components;
 using System.Collections.Generic;
-using System.Text;
 
-namespace EnigmaLibrary
+namespace EnigmaLibrary.Repository
 {
     public class MemoryRepository : IMemoryRepository
     {

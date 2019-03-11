@@ -1,5 +1,5 @@
 ﻿using ConsoleUI.UIServiceComponents;
-using EnigmaLibrary;
+using EnigmaLibrary.Boards;
 
 namespace ConsoleUI.Setups
 {

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace EnigmaLibrary
+namespace EnigmaLibrary.Components
 {
     public class Reflector : IReflector
     {

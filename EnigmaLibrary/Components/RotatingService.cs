@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using EnigmaLibrary.Boards;
 
-namespace EnigmaLibrary
+namespace EnigmaLibrary.Components
 {
     public class RotatingService : IRotatingService
     {

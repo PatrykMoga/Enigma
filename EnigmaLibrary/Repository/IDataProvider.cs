@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using EnigmaLibrary.Components;
+using System.Collections.Generic;
 
-namespace EnigmaLibrary
+namespace EnigmaLibrary.Repository
 {
     public interface IDataProvider
     {

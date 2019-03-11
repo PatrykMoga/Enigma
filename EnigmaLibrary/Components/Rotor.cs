@@ -1,4 +1,4 @@
-﻿namespace EnigmaLibrary
+﻿namespace EnigmaLibrary.Components
 {
     public class Rotor
     {

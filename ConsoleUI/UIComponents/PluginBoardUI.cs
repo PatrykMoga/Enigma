@@ -1,5 +1,5 @@
 ﻿using ConsoleUI.UIServiceComponents;
-using EnigmaLibrary;
+using EnigmaLibrary.Boards;
 using System;
 using System.Text;
 

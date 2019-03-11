@@ -1,4 +1,4 @@
-﻿namespace EnigmaLibrary
+﻿namespace EnigmaLibrary.Decoding
 {
     public interface IDecodingProcessor
     {

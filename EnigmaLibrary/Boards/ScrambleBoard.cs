@@ -1,4 +1,6 @@
-﻿namespace EnigmaLibrary
+﻿using EnigmaLibrary.Components;
+
+namespace EnigmaLibrary.Boards
 {
     public class ScrambleBoard
     {

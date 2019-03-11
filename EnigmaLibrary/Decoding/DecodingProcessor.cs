@@ -1,4 +1,8 @@
-﻿namespace EnigmaLibrary
+﻿using EnigmaLibrary.Boards;
+using EnigmaLibrary.Components;
+using EnigmaLibrary.Repository;
+
+namespace EnigmaLibrary.Decoding
 {
     public class DecodingProcessor : IDecodingProcessor
     {

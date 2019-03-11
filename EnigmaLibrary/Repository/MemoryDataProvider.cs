@@ -1,10 +1,8 @@
-﻿
-using System;
+﻿using EnigmaLibrary.Components;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace EnigmaLibrary
+namespace EnigmaLibrary.Repository
 {
     public class MemoryDataProvider : IDataProvider
     {

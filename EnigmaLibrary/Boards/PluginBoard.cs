@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
-namespace EnigmaLibrary
+namespace EnigmaLibrary.Boards
 {
     public class PluginBoard : IPluginBoard
     {

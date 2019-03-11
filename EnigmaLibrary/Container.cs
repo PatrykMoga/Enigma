@@ -1,4 +1,8 @@
 ﻿using Autofac;
+using EnigmaLibrary.Boards;
+using EnigmaLibrary.Components;
+using EnigmaLibrary.Decoding;
+using EnigmaLibrary.Repository;
 
 namespace EnigmaLibrary
 {

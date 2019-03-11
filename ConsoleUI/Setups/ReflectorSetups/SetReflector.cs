@@ -1,5 +1,6 @@
 ﻿using ConsoleUI.UIServiceComponents;
-using EnigmaLibrary;
+using EnigmaLibrary.Boards;
+using EnigmaLibrary.Repository;
 using static System.Console;
 
 namespace ConsoleUI.Setups

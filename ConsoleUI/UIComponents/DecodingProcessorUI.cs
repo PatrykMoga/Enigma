@@ -1,5 +1,5 @@
 ﻿using ConsoleUI.UIServiceComponents;
-using EnigmaLibrary;
+using EnigmaLibrary.Decoding;
 using System;
 
 namespace ConsoleUI.UIComponents

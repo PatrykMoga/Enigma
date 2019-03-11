@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EnigmaLibrary
+namespace EnigmaLibrary.Boards
 {
     public interface IPluginBoard
     {

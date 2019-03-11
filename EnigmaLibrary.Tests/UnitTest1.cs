@@ -1,6 +1,7 @@
-using NUnit.Framework;
-using EnigmaLibrary;
 using Autofac;
+using EnigmaLibrary;
+using EnigmaLibrary.Decoding;
+using NUnit.Framework;
 
 namespace Tests
 {
