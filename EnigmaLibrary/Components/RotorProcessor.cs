@@ -6,10 +6,10 @@
 
         public char PassValue(char i)
         {
-            var buff = i - 65 + Rotor.Position;
-            if (buff > 25) buff -= 26;
+            var buff = i - 65 + Rotor.Position;          
             if (buff < 0) buff += 26;
             buff = Rotor.Values[buff] - Rotor.Position;
+            //if (buff > 25) buff -= 26;
             return (char)buff;
         }
 

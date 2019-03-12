@@ -12,16 +12,6 @@ namespace EnigmaLibrary.Boards
             Plugins = new Dictionary<char, char>();
         }
 
-        public string SwapMessage(string message)
-        {
-            var sb = new StringBuilder();
-            foreach (var ch in message.ToUpper())
-            {
-                sb.Append(SwapChar(ch));
-            }
-            return sb.ToString();
-        }
-
         public char SwapChar(char ch)
         {
             foreach (var plugin in Plugins)

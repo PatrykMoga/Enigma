@@ -12,7 +12,7 @@ namespace EnigmaLibrary.Repository
         {
             Rotors = new List<Rotor>()
             {
-                new Rotor { Name = "I", TurnoverPosition = 17, Values = "EKMFLGDQVZNTOWYHXUSPAIBRCJ" },
+                new Rotor { Name = "I", TurnoverPosition = 16, Values = "EKMFLGDQVZNTOWYHXUSPAIBRCJ" },
                 new Rotor { Name = "II", TurnoverPosition = 4, Values = "AJDKSIRUXBLHWTMCQGZNPYFVOE" },
                 new Rotor { Name = "III", TurnoverPosition = 21, Values = "BDFHJLCPRTXVZNYEIWGAKMUSQO" },
                 new Rotor { Name = "IV", TurnoverPosition = 21, Values = "ESOVPZJAYQUIRHXLNFTGKDCMWB" },

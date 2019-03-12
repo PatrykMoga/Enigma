@@ -29,24 +29,30 @@ namespace EnigmaLibrary.Decoding
         public string Decode(string message)
         {
             var strBuilder = new System.Text.StringBuilder();
-            message = _plugBoardService.SwapMessage(message);
+
+            //Allow only characters from A-Z
+            message = message.AdaptInput();
 
             foreach (var ch in message)
             {
+                //
+                var buffer = _plugBoardService.SwapChar(ch);
+                //
                 _rotatingService.Rotate();
-
-                char buffer = _scramblerBoard.Processor3.PassValue(ch);
+                //
+                buffer = _scramblerBoard.Processor3.PassValue(buffer);
                 buffer = _scramblerBoard.Processor2.PassValue(buffer);
                 buffer = _scramblerBoard.Processor1.PassValue(buffer);
-
+                //
                 buffer = _scramblerBoard.Reflector.ReflectValue(buffer);
-
+                //
                 buffer = _scramblerBoard.Processor1.ReceiveValue(buffer);
                 buffer = _scramblerBoard.Processor2.ReceiveValue(buffer);
                 buffer = _scramblerBoard.Processor3.ReceiveValue(buffer);
+                //
+                buffer = _plugBoardService.SwapChar(buffer);
 
-               
-                strBuilder.Append(_plugBoardService.SwapChar(buffer));
+                strBuilder.Append(buffer);
             }
             return strBuilder.ToString();
         }

@@ -19,7 +19,6 @@ namespace ConsoleUI.Setups
         {
             Clear();
             Write("Enter the connection in this format (XY): ");
-            var p = _pluginBoard.Plugins;
             var input = ReadLine();
             input = input.ToUpper();
             AddConnection(input[0], input[1]);

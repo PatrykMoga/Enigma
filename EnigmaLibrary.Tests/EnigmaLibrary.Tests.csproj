@@ -16,4 +16,9 @@
     <ProjectReference Include="..\EnigmaLibrary\EnigmaLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DecodingTests\" />
+    <Folder Include="ComponentsTests\" />
+  </ItemGroup>
+
 </Project>

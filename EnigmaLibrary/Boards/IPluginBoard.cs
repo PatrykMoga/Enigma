@@ -7,6 +7,5 @@ namespace EnigmaLibrary.Boards
         Dictionary<char, char> Plugins { get; set; }
 
         char SwapChar(char ch);
-        string SwapMessage(string message);
     }
 }

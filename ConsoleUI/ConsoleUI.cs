@@ -1,16 +1,13 @@
 ﻿using ConsoleUI.UIServiceComponents;
-using EnigmaLibrary.Decoding;
 
 namespace ConsoleUI
 {
     public class ConsoleUI
     {
-        private readonly IDecodingProcessor _procesor;
         private readonly IUIService _uiService;
 
-        public ConsoleUI(IDecodingProcessor processor, IUIService uiService)
+        public ConsoleUI(IUIService uiService)
         {
-            _procesor = processor;
             _uiService = uiService;
         }
        

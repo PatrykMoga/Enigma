@@ -7,12 +7,12 @@ namespace ConsoleUI.UIComponents
 {
     public class PluginBoardUI : IUIComponent
     {
-        public IPluginBoard PlugBoard { get; }
+        private readonly IPluginBoard _plugBoard;
         public UIComponent Component { get; }
 
         public PluginBoardUI(IPluginBoard plugBoard)
         {
-            PlugBoard = plugBoard;
+            _plugBoard = plugBoard;
             Component = new UIComponent(Show);          
         }
 
@@ -20,9 +20,9 @@ namespace ConsoleUI.UIComponents
         {
             int count = 1;
             var sb = new StringBuilder();
-            if (PlugBoard.Plugins.Count > 0)
+            if (_plugBoard.Plugins.Count > 0)
             {
-                foreach (var plug in PlugBoard.Plugins)
+                foreach (var plug in _plugBoard.Plugins)
                 {
                     if (count > 5)
                     {
