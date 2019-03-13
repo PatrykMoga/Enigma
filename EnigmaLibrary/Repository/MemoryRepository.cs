@@ -15,8 +15,8 @@ namespace EnigmaLibrary.Repository
                 new Rotor { Name = "I", TurnoverPosition = 16, Values = "EKMFLGDQVZNTOWYHXUSPAIBRCJ" },
                 new Rotor { Name = "II", TurnoverPosition = 4, Values = "AJDKSIRUXBLHWTMCQGZNPYFVOE" },
                 new Rotor { Name = "III", TurnoverPosition = 21, Values = "BDFHJLCPRTXVZNYEIWGAKMUSQO" },
-                new Rotor { Name = "IV", TurnoverPosition = 21, Values = "ESOVPZJAYQUIRHXLNFTGKDCMWB" },
-                new Rotor { Name = "V", TurnoverPosition = 21, Values = "VZBRGITYUPSDNHLXAWMJQOFECK" }
+                new Rotor { Name = "IV", TurnoverPosition = 9, Values = "ESOVPZJAYQUIRHXLNFTGKDCMWB" },
+                new Rotor { Name = "V", TurnoverPosition = 25, Values = "VZBRGITYUPSDNHLXAWMJQOFECK" }
             };
 
             Reflectors = new List<IReflector>()

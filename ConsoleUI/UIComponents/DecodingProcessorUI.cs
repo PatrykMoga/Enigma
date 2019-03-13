@@ -22,7 +22,7 @@ namespace ConsoleUI.UIComponents
             var input = Console.ReadLine();
             var output = $"Output message: {_decodingProcessor.Decode(input)}";
 
-            output.PrintInLines();
+            output.PrintInLines(119);
             Console.ReadKey();
             Console.Clear();
         }

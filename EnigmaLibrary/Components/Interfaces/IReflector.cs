@@ -2,7 +2,7 @@
 {
     public interface IReflector
     {
-        string Name { get; set; }
+        string Name { get; }
         char ReflectValue(char c);
     }
 }

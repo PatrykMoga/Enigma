@@ -3,7 +3,7 @@
     public interface IRotorProcessor
     {
         Rotor Rotor { get; set; }
-        char PassValue(char i);
-        char ReceiveValue(char i);
+        char PassValue(char ch);
+        char ReceiveValue(char ch);
     }
 }
